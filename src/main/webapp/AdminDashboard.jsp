@@ -13,7 +13,7 @@
 
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo3.png" class="src">
 		</div>
 		<ul>
 
@@ -25,6 +25,14 @@
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
+		
+		<form action="Logout" method="get">
+		<button type="submit" value="slogout" name="btn">Logout</button>
+	    </form>
+		
+		<div id="logo">
+			<img src="images/Logo4.png" class="src">
+		</div>
 	</nav>
 		<nav id="navbar2">
         <header>Menu</header>
