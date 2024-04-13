@@ -13,7 +13,7 @@
 
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo3.png" class="src">
+			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
 		</div>
 		<ul>
 
@@ -25,20 +25,16 @@
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
-		
-		<form action="Logout" method="get">
-		<button type="submit" value="slogout" name="btn">Logout</button>
-	    </form>
-		
-		<div id="logo">
-			<img src="images/Logo4.png" class="src">
-		</div>
 	</nav>
 		<nav id="navbar2">
         <header>Menu</header>
         <ul class="navul">
-            <li class="navli"><a class="nav-link" href="StudentDetails.html">Search Student Details</a></li>
-            <li class="navli"><a class="nav-link" href="SearchStudentDetails.jsp?b1=Search All">Update Student Details</a></li>
+        	<li class="navli"><a class="nav-link" href="AddStudent.html">Add Student</a></li>
+            <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
+            <li class="navli"><a class="nav-link" href="DeleteStudent.">Delete Student</a></li>
+            <li class="navli"><a class="nav-link" href="AddBook.html">Add Book</a></li>
+            <li class="navli"><a class="nav-link" href="DeleteBook.jsp">Delete Book</a></li>
+            <li class="navli"><a class="nav-link" href="SearchBook.jsp">Search Book</a></li>
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">View Issued and Returned Book</a></li>
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Returned">View Returned Book</a></li>
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">View Issued</a></li>
