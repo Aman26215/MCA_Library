@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #0c0c0c;
+  background-color: white;
   overflow: hidden;
 }
 
@@ -64,7 +64,7 @@ margin: 1px;
   font-size: 1.1rem;
 }
 #navbar ul li a {
-  color: #2f0606;
+  
     display: block;
     padding: 4px 23px;
     border-radius: 5px;
