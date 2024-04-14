@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>STUDENT DETAIL FORM</h1>
+	<h1>Student Registration Form</h1>
     
         <form Action="Confirmation.jsp" method="post">
         	<pre><p>Student Roll No.:           <input type="number"   name="Roll No" id="RollNo" placeholder="Enter University Roll No." required></p></pre>

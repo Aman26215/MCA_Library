@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form Action="ActionOnStudent.jsp" method="post">
+	<form Action="Confirmation.jsp" method="post">
         	<pre><p>Student Roll No.:           <input type="number"   name="Roll No" id="RollNo" placeholder="Enter University Roll No." required></p></pre>
                       	   
              <input type="SUBMIT" value="Delete Student" name="b1">    <input type="RESET" value="RESET">
