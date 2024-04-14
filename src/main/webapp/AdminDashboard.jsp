@@ -29,10 +29,10 @@
 		<nav id="navbar2">
         <header>Menu</header>
         <ul class="navul">
-        	<li class="navli"><a class="nav-link" href="AddStudent.html">Add Student</a></li>
+        	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
             <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
-            <li class="navli"><a class="nav-link" href="DeleteStudent.">Delete Student</a></li>
-            <li class="navli"><a class="nav-link" href="AddBook.html">Add Book</a></li>
+            <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
+            <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
             <li class="navli"><a class="nav-link" href="DeleteBook.jsp">Delete Book</a></li>
             <li class="navli"><a class="nav-link" href="SearchBook.jsp">Search Book</a></li>
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">View Issued and Returned Book</a></li>

@@ -1,22 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update Student Profile</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>Update Student Details</h1>
-    
-        <form Action="Student.jsp" method="post">
-        	<pre><p>Student Id:              <input type="text" size="50" name="id" id="id" value="<%= request.getParameter("t1")%>"></p></pre>
-            <pre><p>Name:              <input type="text" size="50" name="Name" id="Name" placeholder="Enter new name"></p></pre>
-            <pre><p>E-mail ID:         <input type="email" size="50" name="Email" id="Email" placeholder="Enter new email id"></p></pre>
-            <pre><p>Password:          <input type="password" size="15" name="Password" id="Password" placeholder="Enter new password"></p></pre>
-            <pre><p>Contact:           <input type="number" min=1000000000 max=9999999999 name="Contact" id="Contact" placeholder="Enter new Contact number"></p></pre>
-            <pre><p>City:              <input type="text" size="20" name="City" id="City" placeholder="Enter new City"></p></pre>
+	<form Action="ActionOnStudent.jsp" method="post">
             
-               
+            <pre><p>Student Roll No.:           <input type="number"   name="Roll No" id="RollNo" placeholder="Enter University Roll No." required></p></pre>
+            <pre><p>Student Name:              <input type="text" size="50" name="Name" id="Name" placeholder="Enter your name" required></p></pre>
+            <pre><p>Student Contact:           <input type="number" min=1000000000 max=9999999999 name="Contact" id="Contact" placeholder="Enter your Contact number" required></p></pre>
+            <pre><p>Student E-mail Id:         <input type="email" size="50" name="Email" id="Email" placeholder="Enter your email id" required></p></pre>
+            <pre><p>Session :         <input type="text" size="50" name="session" id="session" placeholder="Enter Session" required></p></pre>
+            <pre><label for="Gender" >Gender :                  <input class="inline" type="radio" name="Gender" value="Male" checked>Male <input class="inline" type="radio" name="Gender" value="Female"/>Female <input class="inline" type="radio" name="Gender" value="Other"/>Other</label></pre>
+            
              <input type="SUBMIT" value="Update Student" name="b1">    <input type="RESET" value="RESET">
         </form>
+        
+        <script>
+        function showConfirmation() {
+            var result = confirm("Are you sure you want to proceed?");
+            if (result) {
+            	request.setAttribute("name", request.getAttribute("t1")) ;
+                RequestDispatcher rd = getServletContext().getRequestDispatcher("/ActionOnStudent.jsp");
+                rd.forward(request, response);
+            } else {
+                alert("Cancelled!");
+            }
+        }
+    </script>
+        
 </body>
 </html>
