@@ -10,6 +10,8 @@
 <%@ page import="java.sql.*"%>
 
 <% 
+String btn = request.getParameter("b1");
+
 String st1 = request.getParameter("RollNo");
 long sid = Long.parseLong(st1);
 String st2 = request.getParameter("Name");
@@ -17,7 +19,6 @@ String st3 = request.getParameter("Contact");
 String st4 = request.getParameter("Email");
 String st5 = request.getParameter("StudentSession");
 String st6 = request.getParameter("Gender");
-String btn = request.getParameter("b1");
 
 try {
     Class.forName("com.mysql.jdbc.Driver");
@@ -45,7 +46,7 @@ try {
                 </script>
                 <%
             } else {
-                out.println("<script>alert('Student Already Exists.')</script>");
+                out.println("<script>alert('Student with this Id Already Exists.')</script>");
                 %>
                 <script>
                 window.location.href = "AddStudent.jsp";
@@ -53,8 +54,7 @@ try {
                 <%
             }
         } catch(Exception e){
-            e.printStackTrace();
-            out.println("<script>alert('Student Already Exists.')</script>");
+            out.println("<script>alert('Student with this Id Already Exists.')</script>");
             %>
             <script>
             window.location.href = "AddStudent.jsp";
@@ -64,6 +64,7 @@ try {
     }
     
     // Update Student
+    
     if(btn.equalsIgnoreCase("UpdateStudent")){
         try{
                         
@@ -136,7 +137,8 @@ try {
     }
     
 
-
+	// Delete Student
+    
 	if(btn.equalsIgnoreCase("DeleteStudent")){
 		
 		Statement stmt = con.createStatement();
@@ -160,60 +162,6 @@ try {
             <%
 		}		
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }catch(Exception e){
     e.printStackTrace();
