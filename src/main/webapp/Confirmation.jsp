@@ -12,13 +12,13 @@
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "Admin@123");
-		System.out.println("1");
+		
 		String btn = request.getParameter("b1");
 		
 		// Start of Add Student
 
 		if (btn.equalsIgnoreCase("Add Student")) {
-			System.out.println("2");
+			
 			String st1 = request.getParameter("Roll No");
 			String st2 = request.getParameter("Name");
 			String st3 = request.getParameter("Contact");
@@ -38,13 +38,32 @@
 			<form action="ActionOnStudent.jsp?&b1=AddStudent&RollNo=<%= st1 %>&Name=<%=st2 %>&Contact=<%=st3 %>&Email=<%=st4 %>&Session=<%=st5 %>&Gender=<%=st6 %>" method="post">
 				<input type="Submit" value="Yes, I Confirm!"></form>
 			<form action="AddStudent.jsp"><input type="Submit" value="No" name="b1"></form>
-	<%System.out.println("3");
+		
+		<%
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		}
 	}catch(Exception e){
 		e.printStackTrace();
 	}
 
-			
+	
 	%>
 </body>
 </html>
