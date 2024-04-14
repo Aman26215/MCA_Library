@@ -25,7 +25,14 @@
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
+		
+		<div id="logo">
+			<img src="images/Logo4.png" class="src">
+		</div>
+		
 	</nav>
+	<container>
+	<div class="container1">
 		<nav id="navbar2">
         <header>Menu</header>
         <ul class="navul">
@@ -40,6 +47,9 @@
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">View Issued</a></li>
         </ul>
     </nav>
+    </div>
+    <div class="container2"></div>
+    </container>
 	
 </body>
 </html>

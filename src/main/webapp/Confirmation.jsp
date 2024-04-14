@@ -28,7 +28,8 @@
 		// Start of Add Student
 
 		if (btn.equalsIgnoreCase("Add Student")) {
-						
+			
+
 			%>
 			<pre><h1>Student Details</h1></pre>
 			<pre><p>Roll No. : <%= st1 %></p></pre>
@@ -41,7 +42,27 @@
 			<form action="ActionOnStudent.jsp?&b1=AddStudent&RollNo=<%= st1 %>&Name=<%=st2 %>&Contact=<%=st3 %>&Email=<%=st4 %>&StudentSession=<%=st5 %>&Gender=<%=st6 %>" method="post">
 				<input type="Submit" value="Yes, I Confirm!"></form>
 			<form action="AddStudent.jsp"><input type="Submit" value="No" name="b1"></form>
-	<%
+		
+		<%
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 		}
 		
 		//End of Add Student
@@ -211,7 +232,7 @@
 		e.printStackTrace();
 	}
 
-			
+	
 	%>
 </body>
 </html>
