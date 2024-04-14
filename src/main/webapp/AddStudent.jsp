@@ -36,7 +36,7 @@
 <container>
 <div class="container1">
 		<nav id="navbar2">
-        <header>Menu</header>
+        <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
         	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
             <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
