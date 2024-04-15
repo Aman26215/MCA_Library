@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Search Student</title>
 <link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
 </head>
@@ -16,11 +14,7 @@
 		<ul>
 
 			<li class="item"><p>
-		Welcome
-		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
-		Your Admin Id is :
-		<%=session.getAttribute("AdminId")%></p></li>
+		
 			
 		</ul>
 		
@@ -29,8 +23,10 @@
 		</div>
 		
 	</nav>
-	<container>
-	<div class="container1">
+	
+	
+<container>
+<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -46,21 +42,45 @@
         </ul>
     </nav>
     </div>
-    
-    
-    <div class="container2"  >
-    <div id="f">
-    <h1>Delete Student</h1>
-	<form  Action="Confirmation.jsp" method="post">
-        	<pre><p>Student Roll No.: <input type="number"   name="Roll No" id="RollNo" placeholder="Enter University Roll No." required></p></pre>
-                      	   
-            <div class="button-group">
-             <input type="SUBMIT" value="Delete Student" name="b1">    
-             <input type="RESET" value="RESET">
-             </div>
-        </form>
+
+<div class="container2">
+		<div id="f">
+			<h1>Search Student</h1>
+    		<input type="text" class="form-control" id="LiveSearch" autocomplete="off" placeholder="Enter Student Name"></input>
         </div>
+        
+        <div id="searchresult" class="table-content">
+        
+        
         </div>
+</div>
         </container>
+        
+        <script type="text/javascript">
+    $(document).ready(function(){
+        $("#LiveSearch").keyup(function(){
+            var input = $(this).val();
+            alert(input);
+		if(input != ""){
+                
+                $.ajax({
+                    url: "LiveSearchStudent.php",
+                    method: "POST",
+                    data: {input: input},
+                    success: function(data){
+                        $("#searchresult").html(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        console.log("AJAX Error:", textStatus, errorThrown);
+                        alert("There was an error processing your request. Please try again.");
+                    }
+                });
+            } else {
+                $("#searchresult").css("display", "none");
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

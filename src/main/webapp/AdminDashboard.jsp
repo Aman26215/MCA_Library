@@ -16,14 +16,8 @@
 			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
 		</div>
 		<ul>
-
-			<li class="item"><p>
-		Welcome
-		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
-		Your Admin Id is :
-		<%=session.getAttribute("AdminId")%></p></li>
-			
+			<li class="item"><p>Welcome <%=session.getAttribute("AdminName")%></p>
+			<p> __Your Admin Id is :<%=session.getAttribute("AdminId")%></p></li>
 		</ul>
 		
 		<div id="logo">
@@ -34,7 +28,7 @@
 	<container>
 	<div class="container1">
 		<nav id="navbar2">
-        <header>Menu</header>
+        <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
         	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
         	<li class="navli"><a class="nav-link" href="SearchStudent.php">Search Student</a></li>
