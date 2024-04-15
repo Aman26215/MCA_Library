@@ -33,7 +33,7 @@ public class Login extends HttpServlet {
     	try{  
     		Class.forName("com.mysql.jdbc.Driver");  
     		Connection con=DriverManager.getConnection(  
-    		"jdbc:mysql://localhost:3306/test","root","Admin@123");  
+    		"jdbc:mysql://localhost:3306/library","root","Admin@123");  
     		
     		PreparedStatement pstm = con.prepareStatement("SELECT AdminName, password FROM Admin WHERE AdminId=?"); 
     		pstm.setInt(1, id);
