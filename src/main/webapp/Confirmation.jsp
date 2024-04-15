@@ -5,9 +5,44 @@
 <head>
 <meta charset="UTF-8">
 <title>Confirmation Page</title>
+<link rel="stylesheet" href="css/HomePageStyle.css">
+<link rel="stylesheet" href="css/Dashboard.css">
 </head>
 <body>
-	<%@ page import="java.sql.*"%>
+<nav id="navbar">
+		<div id="logo">
+			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+		</div>
+		<ul>
+			<li class="item"><p>Welcome <%=session.getAttribute("AdminName")%></p>
+			<p> __Your Admin Id is :<%=session.getAttribute("AdminId")%></p></li>
+		</ul>
+		
+		<div id="logo">
+			<img src="images/Logo4.png" class="src">
+		</div>
+		
+	</nav>
+	<container>
+	<div class="container1">
+		<nav id="navbar2">
+        <header><img src="images/Logo5.png" class="src2" >Menu</header>
+        <ul class="navul">
+        	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
+            <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
+            <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
+            <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
+            <li class="navli"><a class="nav-link" href="DeleteBook.jsp">Delete Book</a></li>
+            <li class="navli"><a class="nav-link" href="SearchBook.jsp">Search Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">View Issued and Returned Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Returned">View Returned Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">View Issued</a></li>
+        </ul>
+    </nav>
+    </div>
+    <div class="container2" > 
+    
+    <%@ page import="java.sql.*"%>
 	<%
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -31,38 +66,22 @@
 			
 
 			%>
-			<pre><h1>Student Details</h1></pre>
-			<pre><p>Roll No. : <%= st1 %></p></pre>
-			<pre><p>Name : <%= st2 %></p></pre>
-			<pre><p>Contact : <%= st3 %></p></pre>
-			<pre><p>Email : <%= st4 %></p></pre>
-			<pre><p>Session : <%= st5 %></p></pre>
-			<pre><p>Gender : <%= st6 %></p></pre>
-			<pre><p>Do you Sure Want to Add Student?</p></pre>
+			<div class="c">
+			<h1>Student Details</h1>	
+			<p>Roll No. : <%= st1 %></p>	
+			<p>Name : <%= st2 %></p>	
+			<p>Contact : <%= st3 %></p>	
+			<p>Email : <%= st4 %></p>	
+			<p>Session : <%= st5 %></p>	
+			<p>Gender : <%= st6 %></p>	
+			<p>Do you Sure Want to Add Student?</p>	
+			<div class="button-group-c">
 			<form action="ActionOnStudent.jsp?&b1=AddStudent&RollNo=<%= st1 %>&Name=<%=st2 %>&Contact=<%=st3 %>&Email=<%=st4 %>&StudentSession=<%=st5 %>&Gender=<%=st6 %>" method="post">
 				<input type="Submit" value="Yes, I Confirm!"></form>
 			<form action="AddStudent.jsp"><input type="Submit" value="No" name="b1"></form>
-		
+		</div>
+		</div>
 		<%
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 		}
 		
 		//End of Add Student
@@ -79,17 +98,21 @@
 				
 				if(val==sid){
 					%>
-					<pre><h1>New Details of Student</h1></pre>
-					<pre><p>Roll No. : <%= st1 %></p></pre>
-					<pre><p>Name : <%= st2 %></p></pre>
-					<pre><p>Contact : <%= st3 %></p></pre>
-					<pre><p>Email : <%= st4 %></p></pre>
-					<pre><p>Session : <%= st5 %></p></pre>
-					<pre><p>Gender : <%= st6 %></p></pre>
-					<pre><p>Do you Sure Want to Update Student Details?</p></pre>
+					<div class="c">
+					<h1>New Details of Student</h1>	
+					<p>Roll No. : <%= st1 %></p>	
+					<p>Name : <%= st2 %></p>	
+					<p>Contact : <%= st3 %></p>	
+					<p>Email : <%= st4 %></p>	
+					<p>Session : <%= st5 %></p>	
+					<p>Gender : <%= st6 %></p>	
+					<p>Do you Sure Want to Update Student Details?</p>	
+					<div class="button-group-c">
 					<form action="ActionOnStudent.jsp?&b1=UpdateStudent&RollNo=<%= st1 %>&Name=<%=st2 %>&Contact=<%=st3 %>&Email=<%=st4 %>&StudentSession=<%=st5 %>&Gender=<%=st6 %>" method="post">
 						<input type="Submit" value="Yes, I Confirm!"></form>
 					<form action="UpdateStudent.jsp"><input type="Submit" value="No" name="b1"></form>
+					</div>
+					</div>
 			<%
 					flag = 1;
 					break;
@@ -129,17 +152,21 @@
 			if(flag==1){
 				
 				%>
-				<pre><h1>Details of Student</h1></pre>
-				<pre><p>Roll No. : <%= st1 %></p></pre>
-				<pre><p>Name : <%= st2 %></p></pre>
-				<pre><p>Contact : <%= st3 %></p></pre>
-				<pre><p>Email : <%= st4 %></p></pre>
-				<pre><p>Session : <%= st5 %></p></pre>
-				<pre><p>Gender : <%= st6 %></p></pre>
-				<pre><p>Do you Sure Want to Delete this Student?</p></pre>
+				<div class="c">
+				<h1>Details of Student</h1>
+				<p>Roll No. : <%= st1 %></p>
+				<p>Name : <%= st2 %></p>
+				<p>Contact : <%= st3 %></p>
+				<p>Email : <%= st4 %></p>
+				<p>Session : <%= st5 %></p>
+				<p>Gender : <%= st6 %></p>
+				<p>Do you Sure Want to Delete this Student?</p>
+				<div class="button-group-c">
 				<form action="ActionOnStudent.jsp?&b1=DeleteStudent&RollNo=<%= st1 %>" method="post">
 					<input type="Submit" value="Yes, I Confirm!"></form>
 				<form action="DeleteStudent.jsp"><input type="Submit" value="No" name="b1"></form>
+				</div>
+				</div>
 		<%
 		
 			}else{
@@ -173,15 +200,19 @@
 			if(btn.equalsIgnoreCase("Add Book")){
 			
 			%>
-			<pre><h1>Book Detail</h1></pre>
-			<pre><p>Book Id : <%= bt1 %></p></pre>
-			<pre><p>Book Name : <%= bt2 %></p></pre>
-			<pre><p>Author : <%= bt3 %></p></pre>
-			<pre><p>Publication : <%= bt4 %></p></pre>
-			<pre><p>Do you Sure Want to Add this Book?</p></pre>
+			<div class="c">
+			<h1>Book Detail</h1>	
+			<p>Book Id : <%= bt1 %></p>	
+			<p>Book Name : <%= bt2 %></p>	
+			<p>Author : <%= bt3 %></p>	
+			<p>Publication : <%= bt4 %></p>	
+			<p>Do you Sure Want to Add this Book?</p>	
+			<div class="button-group-c">
 			<form action="ActionOnBook.jsp?&b1=AddBook&BookId=<%= bt1 %>&BookName=<%=bt2 %>&Author=<%=bt3 %>&Publication=<%=bt4 %>" method="post">
 				<input type="Submit" value="Yes, I Confirm!"></form>
 			<form action="AddBook.jsp"><input type="Submit" value="No" name="b1"></form>
+			</div>
+			</div>
 	<%
 		}
 			
@@ -205,15 +236,19 @@
 				if(flag==1){
 					
 					%>
-					<pre><h1>Details of Book</h1></pre>
-					<pre><p>Book Id : <%= bt1 %></p></pre>
-					<pre><p>Book Name : <%= bt2 %></p></pre>
-					<pre><p>Author : <%= bt3 %></p></pre>
-					<pre><p>Publication : <%= bt4 %></p></pre>
-					<pre><p>Do you Sure Want to Delete this Book?</p></pre>
+					<div class="c">
+					<h1>Details of Book</h1>	
+					<p>Book Id : <%= bt1 %></p>	
+					<p>Book Name : <%= bt2 %></p>	
+					<p>Author : <%= bt3 %></p>	
+					<p>Publication : <%= bt4 %></p>	
+					<p>Do you Sure Want to Delete this Book?</p>	
+					<div class="button-group-c">
 					<form action="ActionOnBook.jsp?&b1=DeleteBook&RollNo=<%= bt1 %>" method="post">
 						<input type="Submit" value="Yes, I Confirm!"></form>
 					<form action="DeleteBook.jsp"><input type="Submit" value="No" name="b1"></form>
+					</div>
+					</div>
 			<%
 			
 				}else{
@@ -234,5 +269,9 @@
 
 	
 	%>
+    </div>
+    
+    </container>
+	
 </body>
 </html>
