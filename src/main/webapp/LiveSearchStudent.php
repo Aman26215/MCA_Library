@@ -5,7 +5,7 @@ if(isset($_POST['input'])){
     $input = $_POST['input'];
     
     // Using prepared statement to prevent SQL injection
-    $query = "SELECT * FROM Student WHERE StudentName LIKE ?";
+    $query = "SELECT * FROM Student WHERE StudentId = 101";
     $stmt = mysqli_prepare($con, $query);
     
     // Check if the prepared statement was successful
