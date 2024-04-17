@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-<title>Add Student</title>
-
+<title>Search Student</title>
 <link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
 </head>
 <body>
+
 <nav id="navbar">
 		<div id="logo">
 			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
@@ -18,11 +17,7 @@
 		<ul>
 
 			<li class="item"><p>
-		Welcome
-		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
-		Your Admin Id is :
-		<%=session.getAttribute("AdminId")%></p></li>
+		
 			
 		</ul>
 		
@@ -52,23 +47,19 @@
     </div>
 
 <div class="container2">
-<div id="f">
-	<h1>Student Registration Form</h1>
-    
-        <form Action="Confirmation.jsp" method="post">
-        	<pre><p>Student Roll No.:  <input type="number"   name="Roll No" id="RollNo" placeholder="Enter University Roll No." required style="width: 374px; "></p></pre>
-            <pre><p>Student Name:      <input type="text" size="50" name="Name" id="Name" placeholder="Enter your name" required></p></pre>
-            <pre><p>Student Contact:   <input type="number" min=1000000000 max=9999999999 name="Contact" id="Contact" placeholder="Enter your Contact number" required style="width: 376px; "></p></pre>
-            <pre><p>Student E-mail Id: <input type="email" size="50" name="Email" id="Email" placeholder="Enter your email id" required></p></pre>
-            <pre><p>Session :          <input type="text" size="50" name="StudentSession" id="Session" placeholder="Enter Session" required></p></pre>
-            <pre><label for="Gender" >Gender :            <input class="inline" type="radio" name="Gender" value="Male"/ checked>Male <input class="inline" type="radio" name="Gender" value="Female"/>Female <input class="inline" type="radio" name="Gender" value="Other"/>Other</label></pre>
+		<div id="f">
+			<h1>Search Student</h1>
+				<form action="SearchingStudent.jsp" method="post">
+	
+           <p style="font-size:10px"><pre>Student Id :     </pre></p><input type="number" name="t1" palceholder="Enter Student Id" style="padding:5px"><input type="submit" value="Search Id" name="b1" style="padding:5px">
+           <p>OR</p>
+           <p style="font-size:10px"><pre>Student Name :     </pre></p><input type="text" name="t2" palceholder="Student Name" style="padding:5px"><input type="submit" value="Search Name" name="b1" style="padding:5px;">
+       		<p>OR</p>
             
-          	 <div class="button-group">
-             <input type="SUBMIT" value="Add Student" name="b1">    <input type="RESET" value="RESET">
-             </div>
-        </form>
+            <input type="submit" value="Search All" name="b1">
+        
+	</form>
         </div>
-        </div>
-        </container>
+        
 </body>
 </html>

@@ -114,16 +114,32 @@
      text-decoration: none;
  }
  
- .container1{
-    width: 20%;
- 
+ #partion{
+ 	display : flex;
  }
  
+ .container1{
+    width: 20%;
+ 	
+ }
  .container2{
     width: 80%;
     margin: 65px;
     display: flexbox;
  }
+ 
+ 
+ #parentcontainer {
+        display: flexbox;
+        width: fit-content;
+    }
+  
+ #childcontainer {
+        border: 3px solid grey;
+        background-color: blue;
+        height: 50px;
+        width:50px;
+        }
  
  .c h1 {
         text-align: center;
@@ -153,6 +169,17 @@
     font-weight: bold;
  
  }
+ 
+div.scroll {
+            margin: 4px, 4px;
+            padding: 4px;
+            background-color: green;
+            width: 500px;
+            height: 110px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            text-align: justify;
+        }
  
  
  .c{

@@ -1,31 +1,15 @@
 <?php
-include("config.php");
+$search_value = $_POST["input"];
+$con = mysqli_connect("localhost","root","","test") or die("Connection Failed");
+$query = "SELECT * FROM Student WHERE StudentName LIKE '%{$search_value}%'";
+$result = mysqli_query($con, $query) or die("SQL Query Failed.");
+$output = "";
 
-if(isset($_POST['input'])){
-    $input = $_POST['input'];
-    
-    // Using prepared statement to prevent SQL injection
-    $query = "SELECT * FROM Student WHERE StudentId = 101";
-    $stmt = mysqli_prepare($con, $query);
-    
-    // Check if the prepared statement was successful
-    if ($stmt) {
-        // Bind the input parameter to the statement
-        mysqli_stmt_bind_param($stmt, "s", $inputWithWildcard);
-        
-        // Add '%' around the input for LIKE query
-        $inputWithWildcard = '%' . $input . '%';
-        
-        // Execute the statement
-        mysqli_stmt_execute($stmt);
-        
-        // Get the result set
-        $result = mysqli_stmt_get_result($stmt);
-        
+
         if(mysqli_num_rows($result) > 0){
-            ?>
-            <table border="1">
-                <thead>
+           $output = '
+            <table border="1" width="100%" cellspacing="0" cellpadding="10px">
+               
                     <tr>
                         <th>Student Id</th>
                         <th>Name</th>
@@ -33,40 +17,27 @@ if(isset($_POST['input'])){
                         <th>Email</th>
                         <th>Session</th>
                         <th>Gender</th>                        
-                    </tr>
-                </thead>
-                
-                <tbody>
-<?php 
+                    </tr>';
+          
                     while($row = mysqli_fetch_assoc($result)){
-                        $sid = $row['StudentId'];
-                        $name = $row['StudentName'];
-                        $contact = $row['StudentContact'];
-                        $email = $row['StudentEmail'];
-                        $session = $row['StudentSession'];
-                        $gender = $row['Gender'];
-?>
-                        <tr>
-                            <td><?php echo $sid;?></td>
-                            <td><?php echo $name;?></td>
-                            <td><?php echo $contact;?></td>
-                            <td><?php echo $email;?></td>
-                            <td><?php echo $session;?></td>
-                            <td><?php echo $gender;?></td>
-                        </tr>
-<?php 
+                        
+                        $output .= "<tr>
+                                        <td align='center'>{$row["StudentId"]}</td>
+                                        <td align='center'>{$row["StudentName"]}</td>
+                                        <td align='center'>{$row["StudentContact"]}</td>
+                                        <td align='center'>{$row["StudentEmail"]}</td>
+                                        <td align='center'>{$row["StudentSession"]}</td>
+                                        <td align='center'>{$row["Gender"]}</td>
+                                        </tr>";
                     }
-?>
-                </tbody>
-            </table>
-<?php 
+                    $output .= "</table>";
+                    
+                    mysqli_close($con);
+                    
+                    echo $output;
+                        
         } else {
-            echo "Student Id\tName\tContact\tEmail\tSession\tGender<br>";
+            
             echo "No Data Found";
         }
-        
-        // Close the statement
-        mysqli_stmt_close($stmt);
-    }
-}
 ?>

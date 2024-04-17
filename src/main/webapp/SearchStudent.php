@@ -56,31 +56,24 @@
 </div>
         </container>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
         <script type="text/javascript">
-    $(document).ready(function(){
-        $("#LiveSearch").keyup(function(){
-            var input = $(this).val();
-            
-		if(input != ""){
-                
-                $.ajax({
-                    url: "LiveSearchStudent.php",
-                    method: "POST",
-                    data: {input: input},
-                    success: function(data){
-                        $("#searchresult").html(data);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown){
-                        console.log("AJAX Error:", textStatus, errorThrown);
-                        alert("There was an error processing your request. Please try again.");
-                    }
-                });
-            } else {
-                $("#searchresult").css("display", "none");
-            }
+    $(document).ready(function() {
+        $("#LiveSearch").on("keyup", function() {
+            var search_term = $(this).val()
+
+            $.ajax({
+                url: "LiveSearchStudent.php",
+                type: "POST",
+                data: { search: search_term },
+                success: function(data) {
+                    $("#searchresult").html(data);
+                }
+            });
         });
     });
 </script>
+
 
 </body>
 </html>

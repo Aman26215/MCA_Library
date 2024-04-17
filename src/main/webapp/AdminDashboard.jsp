@@ -4,7 +4,7 @@
 <html>
 <head>																							
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin Dashboard</title>
 <link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
 
@@ -25,7 +25,8 @@
 		</div>
 		
 	</nav>
-	<container>
+	
+	<div id="partion">
 	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
@@ -43,8 +44,26 @@
         </ul>
     </nav>
     </div>
-    <div class="container2"></div>
-    </container>
+    
+    
+    <div class="container2">
+    	<div id="parentcontainer">
+    <div id="childcontainer">
+        <h2>Container 1</h2>
+        <p>This is the content of container 1.</p>
+    </div>
+    <div id="childcontainer">
+        <h2>Container 3</h2>
+        <p>This is the content of container 2.</p>
+    </div>
+    <div id="childcontainer">
+        <h2>Container 4</h2>
+        <p>This is the content of container 3.</p>
+    </div>
+    </div>
+    	  
+    </div>
+  </div>
 	
 </body>
 </html>
