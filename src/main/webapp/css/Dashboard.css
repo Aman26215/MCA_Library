@@ -155,6 +155,21 @@
  }
  
  
+  /* Style the scrollbar */
+  #parentcontainer {
+        display: flexbox;
+        width: fit-content;
+    }
+  
+  #childcontainer {
+        border: 3px solid grey;
+        background-color: blue;
+        height: 50px;
+        width:50px;
+    }
+ 
+ 
+ 
  .c{
     width: fit-content;
     margin: auto;

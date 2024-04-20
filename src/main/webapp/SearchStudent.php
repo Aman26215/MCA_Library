@@ -46,7 +46,7 @@
 <div class="container2">
 		<div id="f">
 			<h1>Search Student</h1>
-    		<input type="text" class="form-control" id="LiveSearch" autocomplete="off" placeholder="Enter Student Name"></input>
+    		<input type="text" class="form-control" id="l" autocomplete="off" placeholder="Enter Student Name"></input>
         </div>
         
         <div id="searchresult" class="table-content">
@@ -58,29 +58,14 @@
         
         <script type="text/javascript">
     $(document).ready(function(){
-        $("#LiveSearch").keyup(function(){
+        $("#l").keyup(function(){
             var input = $(this).val();
             alert(input);
-		if(input != ""){
-                
-                $.ajax({
-                    url: "LiveSearchStudent.php",
-                    method: "POST",
-                    data: {input: input},
-                    success: function(data){
-                        $("#searchresult").html(data);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown){
-                        console.log("AJAX Error:", textStatus, errorThrown);
-                        alert("There was an error processing your request. Please try again.");
-                    }
-                });
-            } else {
-                $("#searchresult").css("display", "none");
-            }
+		
         });
     });
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>
 </html>

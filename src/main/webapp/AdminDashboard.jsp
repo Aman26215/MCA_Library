@@ -5,8 +5,9 @@
 <head>																							
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
+<link rel="stylesheet" href="css/HomePageStyle.css">
+
 
 </head>
 <body>
@@ -43,7 +44,25 @@
         </ul>
     </nav>
     </div>
-    <div class="container2"></div>
+    </container>
+    <container>
+    <div class="container2">
+    <div id="parentcontainer">
+    <div id="childcontainer">
+        <h2>Container 1</h2>
+        <p>This is the content of container 1.</p>
+    </div>
+    <div id="childcontainer">
+        <h2>Container 3</h2>
+        <p>This is the content of container 2.</p>
+    </div>
+    <div id="childcontainer">
+        <h2>Container 4</h2>
+        <p>This is the content of container 3.</p>
+    </div>
+    </div>
+</div>
+
     </container>
 	
 </body>
