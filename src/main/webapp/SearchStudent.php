@@ -55,17 +55,34 @@
         </div>
 </div>
         </container>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
         <script type="text/javascript">
+<<<<<<< HEAD
     $(document).ready(function(){
         $("#l").keyup(function(){
             var input = $(this).val();
             alert(input);
 		
+=======
+    $(document).ready(function() {
+        $("#LiveSearch").on("keyup", function() {
+            var search_term = $(this).val()
+
+            $.ajax({
+                url: "LiveSearchStudent.php",
+                type: "POST",
+                data: { search: search_term },
+                success: function(data) {
+                    $("#searchresult").html(data);
+                }
+            });
+>>>>>>> 2f92ec595acdf8fde80c8fac68ca01ac3768ae03
         });
     });
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </body>
 </html>

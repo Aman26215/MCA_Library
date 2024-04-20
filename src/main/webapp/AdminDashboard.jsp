@@ -5,6 +5,9 @@
 <head>																							
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
 <link rel="stylesheet" href="css/HomePageStyle.css">
 
@@ -26,7 +29,8 @@
 		</div>
 		
 	</nav>
-	<container>
+	
+	<div id="partion">
 	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
@@ -44,26 +48,38 @@
         </ul>
     </nav>
     </div>
-    </container>
-    <container>
+
+    
     <div class="container2">
+    	<div id="parentcontainer">
+    <div id="childcontainer">
+        <h2>Books</h2>
+    </div>
+    <div id="childcontainer">
+        <h2>Students</h2>
+    </div>
+    <div id="childcontainer">
+        <h2>Admins</h2>
+    </div>
+    </div>
     <div id="parentcontainer">
     <div id="childcontainer">
-        <h2>Container 1</h2>
-        <p>This is the content of container 1.</p>
+        <h2>Issued</h2>
     </div>
     <div id="childcontainer">
-        <h2>Container 3</h2>
-        <p>This is the content of container 2.</p>
+        <h2>Returned</h2>
     </div>
     <div id="childcontainer">
-        <h2>Container 4</h2>
-        <p>This is the content of container 3.</p>
+        <h2>Not Returned</h2>
     </div>
     </div>
+
 </div>
 
     </container>
-	
+
+    	  
+    </div>
+  </div>	
 </body>
 </html>
