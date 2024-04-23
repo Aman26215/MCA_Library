@@ -34,36 +34,46 @@
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
         	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
+        	<li class="navli"><a class="nav-link" href="SearchStudent.php">Search Student</a></li>
             <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
             <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
             <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
-            <li class="navli"><a class="nav-link" href="DeleteBook.jsp">Delete Book</a></li>
             <li class="navli"><a class="nav-link" href="SearchBook.jsp">Search Book</a></li>
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">View Issued and Returned Book</a></li>
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Returned">View Returned Book</a></li>
-            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">View Issued</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">Not Returned</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">Return Book</a></li>
         </ul>
     </nav>
     </div>
 
 <div class="container2">
+
 <div id ="s">
+
+	<div id="f">
+
 		<div class="searchform">
 			<h1 style="text-align:center; margin:0px;">Search Book</h1>
 				<form action="SearchingBook.jsp" method="post">
 	
-           <p style="font-size:20px;  margin: 5px;" >Book Id :     <input type="number" name="t1" palceholder="Enter Book Id" style="padding:5px">
+           <p style="font-size:20px;  margin: 5px;" >Book Id :     <input type="number" name="t1" placeholder="Enter Book Id" style="padding:5px">
            <input type="submit" value="Search Id" name="b1" ></p>
            <p style="text-align:center; margin: 5px;" >OR</p>
-           <p style="font-size:20px; margin:5px">Book Name :  <input type="text" name="t2" palceholder="Enter Book Name" style="padding:5px">
+           <p style="font-size:20px; margin:5px">Book Name :  <input type="text" name="t2" placeholder="Enter Book Name" style="padding:5px">
            <input type="submit" value="Search Name" name="b1" ></p>
        		<p style="text-align:center; margin: 5px;">OR</p>
             <div class="button-group">
             <input type="submit" value="Search All" name="b1" style="margin: 5px;">
             </div>
 	</form>
+
 	    </div>
+
+	</div>
+
         </div>
         </div>
+        </container>
 </body>
 </html>

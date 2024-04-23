@@ -35,6 +35,7 @@ if(bt.equalsIgnoreCase("Search Id")) {
                     <th>Publication</th>
                     <th>ISBN No.</th>
                     <th>Order Received</th>
+                    <th>Link</th>
                 </tr>
                 <%
 				while (rs.next()) {
@@ -46,6 +47,11 @@ if(bt.equalsIgnoreCase("Search Id")) {
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(6)%></td>
                     <td><%=rs.getString(7)%></td>
+                    <td>
+			<%if(rs.getInt(5) > 0){ %>
+			<a href="IssueBook.jsp?BookId=<%= rs.getInt(1) %>" >Issue</a>
+			<% }else { %>Book Already Issued<% } %>
+			</td>
                 </tr>
 				<%
 				}con.close();
@@ -80,6 +86,7 @@ if(bt.equalsIgnoreCase("Search Name")) {
                     <th>Publication</th>
                     <th>ISBN No.</th>
                     <th>Order Received</th>
+                    <th>Link</th>
                 </tr>
                 <%
 				while (rs.next()) {
@@ -91,6 +98,11 @@ if(bt.equalsIgnoreCase("Search Name")) {
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(6)%></td>
                     <td><%=rs.getString(7)%></td>
+                    <td>
+			<%if(rs.getInt(5) > 0){ %>
+			<a href="IssueBook.jsp?BookId=<%= rs.getInt(1) %>" >Issue</a>
+			<% }else { %>Book Already Issued<% } %>
+			</td>
                 </tr>
 				<%
 				}con.close();
@@ -123,6 +135,7 @@ if(bt.equalsIgnoreCase("Search All")) {
                     <th>Publication</th>
                     <th>ISBN No.</th>
                     <th>Order Received</th>
+                    <th>Link</th>
                 </tr>
                 <%
 				while (rs.next()) {
@@ -134,6 +147,11 @@ if(bt.equalsIgnoreCase("Search All")) {
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(6)%></td>
                     <td><%=rs.getString(7)%></td>
+                    <td>
+			<%if(rs.getInt(5) > 0){ %>
+			<a href="IssueBook.jsp?BookId=<%= rs.getInt(1) %>" >Issue</a>
+			<% }else { %>Book Already Issued<% } %>
+			</td>
                 </tr>
 				<%
 				}con.close();

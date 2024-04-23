@@ -124,7 +124,8 @@
  }
  .container2{
     width: 80%;
-    margin: 65px;
+    margin: 50px;
+    display : ruby;
  }
  
  
@@ -221,7 +222,7 @@ div.scroll {
  }
  
  .c{
-    width: fit-content;
+    width: 30%;
     margin: auto;
     padding: 0px 50px 25px 50px;
     border: 5px solid grey;

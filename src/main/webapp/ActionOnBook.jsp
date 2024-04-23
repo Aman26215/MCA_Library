@@ -61,33 +61,6 @@ try {
             <%
         }
     }
-    
-    
-		 // Delete Book
-    
- 	if(btn.equalsIgnoreCase("DeleteBook")){
- 		
- 		Statement stmt = con.createStatement();
- 		int i = stmt.executeUpdate("DELETE FROM Book WHERE StudentId="+bid);
- 		
- 		if(i>0){
- 			out.println("<script>alert('Deleted Successfully.')</script>");
-        
-             %>
-             <script>
-             window.location.href = "DeleteBook.jsp";
-             </script>
-             <%
- 		}else{
- 			out.println("<script>alert('Something Went Wrong.')</script>");
- 		       
-             %>
-             <script>
-             window.location.href = "DeleteBook.jsp";
-             </script>
-             <%
- 		}		
- 	}
 
  }catch(Exception e){
      e.printStackTrace();
