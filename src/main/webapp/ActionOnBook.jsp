@@ -17,6 +17,8 @@ int bid = Integer.parseInt(bt1);
 String bt2 = request.getParameter("BookName");
 String bt3 = request.getParameter("Author");
 String bt4 = request.getParameter("Publication");
+String bt5 = request.getParameter("ISBN");
+String bt6 = request.getParameter("Date");
 
 try {
     Class.forName("com.mysql.jdbc.Driver");
@@ -28,11 +30,13 @@ try {
     if(btn.equalsIgnoreCase("AddBook")){
         try{
             PreparedStatement pstm = con.prepareStatement(
-                    "INSERT INTO Book (BookId, BookName, Author, Publication) VALUES (?,?,?,?)");
+                    "INSERT INTO Book (BookId, BookName, Author, Publication, ISBN_No, OrderReceivedDate) VALUES (?,?,?,?, ?, ?)");
             pstm.setString(1, bt1);
             pstm.setString(2, bt2);
             pstm.setString(3, bt3);
             pstm.setString(4, bt4);
+            pstm.setString(5, bt5);
+            pstm.setString(6, bt6);
             
             int i = pstm.executeUpdate();
             

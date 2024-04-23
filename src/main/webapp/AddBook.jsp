@@ -59,6 +59,8 @@
             <pre><p>Book Name :     <input type="text" size="50" name="BookName" id="BookName" placeholder="Enter Book Name" required></p></pre>
             <pre><p>Author :        <input type="text" size="50" name="Author" id="Author" placeholder="Enter Author Name" required></p></pre>
             <pre><p>Publication :   <input type="text" size="50" name="Publication" id="Publication" placeholder="Publication Name" required></p></pre>
+            <pre><p>ISBN Number :   <input type="text" size="50" name="ISBN" id="ISBN" placeholder="ISBN Number" required></p></pre>
+            <pre><p>Date of Receiving :   <input type="date" size="50" name="Date" id="Date" placeholder="Date" required></p></pre>
              <div class="button-group">        	   
              <input type="Submit" value="Add Book" name="b1">    <input type="RESET" value="Reset">
              </div>

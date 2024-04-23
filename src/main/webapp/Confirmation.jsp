@@ -57,7 +57,7 @@
 			</ul>
 		</nav>
 	</div>
-	<div class="container2">
+	<div class="container2" >
 
 		<%@ page import="java.sql.*"%>
 		<%
@@ -246,17 +246,17 @@
 		}
 
 		// End of Delete Student
-
-		if (btn.equalsIgnoreCase("Add Book") || btn.equalsIgnoreCase("Delete Book")) {
-		String bt1 = request.getParameter("BookId");
-		int bid = Integer.parseInt(bt1);
-		String bt2 = request.getParameter("BookName");
-		String bt3 = request.getParameter("Author");
-		String bt4 = request.getParameter("Publication");
-
+		
 		// Start of Add Book
 
 		if (btn.equalsIgnoreCase("Add Book")) {
+			String bt1 = request.getParameter("BookId");
+			int bid = Integer.parseInt(bt1);
+			String bt2 = request.getParameter("BookName");
+			String bt3 = request.getParameter("Author");
+			String bt4 = request.getParameter("Publication");
+	        String bt5 = request.getParameter("ISBN");
+	        String bt6 = request.getParameter("Date");
 		%>
 		<div class="c">
 			<h1>Book Detail</h1>
@@ -272,10 +272,18 @@
 			<p>
 				Publication :
 				<%=bt4%></p>
+		    <p>
+				ISBN Number :
+				<%=bt5%></p>
+			<p>
+				Date of Receiving :
+				<%=bt6%></p>
+				
+				
 			<p>Do you Sure Want to Add this Book?</p>
 			<div class="button-group-c">
 				<form
-					action="ActionOnBook.jsp?&b1=AddBook&BookId=<%=bt1%>&BookName=<%=bt2%>&Author=<%=bt3%>&Publication=<%=bt4%>"
+					action="ActionOnBook.jsp?&b1=AddBook&BookId=<%=bt1%>&BookName=<%=bt2%>&Author=<%=bt3%>&Publication=<%=bt4%>&ISBN=<%=bt5%>&Date=<%=bt6%>"
 					method="post">
 					<input type="Submit" value="Yes, I Confirm!">
 				</form>
@@ -286,7 +294,7 @@
 		</div>
 		<%
 		}
-		}
+		
 
 		// End of Add book
 
@@ -329,7 +337,8 @@
 			bisbn = rs1.getString(6);
 		}
 		%>
-		<div class="c">
+		<div id="issueConfirmation">
+		<div class="confirmation"  >
 			<h1>Book Detail</h1>
 			<p>
 				Book Id :
@@ -347,7 +356,7 @@
 				ISBN No. :
 				<%=bisbn%></p>
 		</div>
-		<div class="c">
+		<div class="confirmation">
 			<h1>Student Detail</h1>
 			<p>
 				Student Id :
@@ -368,6 +377,8 @@
 				Gender :
 				<%=sgender%></p>
 		</div>
+		</div>
+		<div class="c">
 		<p>Do you Sure Want to Issue this Book to above Student?</p>
 		<div class="button-group-c">
 			<form
@@ -378,6 +389,7 @@
 			<form action="IssueBook.jsp?BookId=<%=bid%>" method="post">
 				<input type="submit" value="No">
 			</form>
+		</div>
 		</div>
 		<%
 		}

@@ -125,7 +125,13 @@
  .container2{
     width: 80%;
     margin: 50px;
-    display : ruby;
+ 
+ }
+ 
+ #issueConfirmation{
+  display:flex;
+  
+  
  }
  
  
@@ -146,6 +152,12 @@
         margin-bottom: 20px;
         color: black; 
         
+ }
+ 
+ .confirmation h1{
+        text-align: center;
+        margin-bottom: 20px;
+        color: black; 
  }
  
  #f{
@@ -183,7 +195,7 @@
  
 div.scroll {
     margin-left: 26%;
-    margin-top: 20%;
+    margin-top: 19%;
     position: absolute;
     background-color: #d7e7e3;
     height: 300px;
@@ -194,7 +206,9 @@ div.scroll {
     font-size: 18px;
         }
  
- 
+ thead{
+  position: fixed;
+ }
   /* Style the scrollbar */
   
   #container {
@@ -218,15 +232,27 @@ div.scroll {
     }
  
  td{
-    padding: 3px 4px; 
+    padding: 4px 2px; 
  }
  
  .c{
     width: 30%;
     margin: auto;
-    padding: 0px 50px 25px 50px;
+    padding: 0px 50px 15px 30px;
     border: 5px solid grey;
-    border-radius: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #c5c5e7;
+ }
+ 
+ .confirmation{
+    height: 330px;
+    width: 425px;
+    margin: 10px 30px;
+    padding: 0px 50px 15px 30px;
+    border: 5px solid grey;
+    border-radius: 25px;
     font-size: 20px;
     font-weight: bold;
     background-color: #c5c5e7;
