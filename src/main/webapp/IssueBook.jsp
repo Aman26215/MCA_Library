@@ -2,19 +2,14 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>																							
+<head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Issue Book</title>
 
-<title>Admin Dashboard</title>
 <link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
-<link rel="stylesheet" href="css/HomePageStyle.css">
-
-
 </head>
 <body>
-
 <nav id="navbar">
 		<div id="logo">
 			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
@@ -29,14 +24,13 @@
 		</div>
 		
 	</nav>
-	
-	<div id="partion">
+	<container>
 	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
         	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
-        	<li class="navli"><a class="nav-link" href="SearchStudent.jsp">Search Student</a></li>
+        	<li class="navli"><a class="nav-link" href="SearchStudent.php">Search Student</a></li>
             <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
             <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
             <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
@@ -48,38 +42,21 @@
         </ul>
     </nav>
     </div>
-
-    
-    <div class="container2">
-    	<div id="parentcontainer">
-    <div id="childcontainer">
-        <h2>Books</h2>
-    </div>
-    <div id="childcontainer">
-        <h2>Students</h2>
-    </div>
-    <div id="childcontainer">
-        <h2>Admins</h2>
-    </div>
-    </div>
-    <div id="parentcontainer">
-    <div id="childcontainer">
-        <h2>Issued</h2>
-    </div>
-    <div id="childcontainer">
-        <h2>Returned</h2>
-    </div>
-    <div id="childcontainer">
-        <h2>Not Returned</h2>
-    </div>
-    </div>
-
-</div>
-
-    </container>
-
-    	  
-    </div>
-  </div>	
+    <div class="container2" >
+    <div id="f">
+	<% String bid = request.getParameter("BookId"); %>
+	<h1>Issue Book to Student</h1>
+	<form action="Confirmation.jsp" method="post">
+		<p>Book Id : </p><input name="t1" value="<%= bid %>" readonly >
+		<p>Student Id : </p><input type="number" name="t2" placeholder="Enter Student Roll No." >
+		<input type="submit" name= "b1" value="Issue">
+		
+	</form>
+	<form action="SearchBook.jsp" method="post">
+		<input type="submit" value="Go Back">
+	</form>
+	</div>
+	
+	
 </body>
 </html>

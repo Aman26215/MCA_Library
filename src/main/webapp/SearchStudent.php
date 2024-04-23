@@ -46,7 +46,7 @@
 <div class="container2">
 		<div id="f">
 			<h1>Search Student</h1>
-    		<input type="text" class="form-control" id="LiveSearch" autocomplete="off" placeholder="Enter Student Name"></input>
+    		<input type="text" class="form-control" id="l" autocomplete="off" placeholder="Enter Student Name"></input>
         </div>
         
         <div id="searchresult" class="table-content">
@@ -58,6 +58,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       
         <script type="text/javascript">
+<<<<<<< HEAD
+    $(document).ready(function(){
+        $("#l").keyup(function(){
+            var input = $(this).val();
+            alert(input);
+		
+=======
     $(document).ready(function() {
         $("#LiveSearch").on("keyup", function() {
             var search_term = $(this).val()
@@ -70,9 +77,11 @@
                     $("#searchresult").html(data);
                 }
             });
+>>>>>>> 2f92ec595acdf8fde80c8fac68ca01ac3768ae03
         });
     });
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </body>

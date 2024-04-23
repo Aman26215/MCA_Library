@@ -124,13 +124,13 @@
  }
  .container2{
     width: 80%;
-    margin: 65px;
-    display: flexbox;
+    margin: 50px;
+    display : ruby;
  }
  
  
  #parentcontainer {
-        display: flexbox;
+        display: flex;
         width: fit-content;
     }
   
@@ -171,19 +171,42 @@
  }
  
 div.scroll {
-               margin-left: 26%;
+    margin-left: 26%;
     margin-top: 32%;
     position: fixed;
     background-color: #d7e7e3;
     width: 70%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    text-align: start;
+    overflow-x: auto;
+    overflow-y: scroll;
         }
  
  
+  /* Style the scrollbar */
+  
+  #container {
+            overflow: auto;
+            height: 500px;
+        }
+        
+        
+        
+  #parentcontainer {
+        display: flex;
+        margin: auto;
+    }
+  
+  #childcontainer {
+        border: 3px solid grey;
+        background-color: blue;
+        margin: 25px;
+        padding: 70px;
+        border-radius: 15px;
+    }
+ 
+ 
+ 
  .c{
-    width: fit-content;
+    width: 30%;
     margin: auto;
     padding: 0px 50px 25px 50px;
     border: 5px solid grey;
