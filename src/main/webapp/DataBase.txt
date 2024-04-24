@@ -1,19 +1,27 @@
 CREATE DATABASE library;
 USE library;
 
+-- Student Table 
+
 CREATE TABLE Student
 (StudentId BIGINT PRIMARY KEY,
 StudentName VARCHAR(255) NOT NULL,
 StudentContact VARCHAR(255) NOT NULL,
 StudentEmail VARCHAR(255),
 StudentSession VARCHAR(255) NOT NULL,
-Gender VARCHAR(255) NOT NULL);
+Gender VARCHAR(255) NOT NULL,
+capacity INT DEFAULT(1));
+
+ALTER TABLE Student
+ADD COLUMN capacity INT DEFAULT(1);
 
 INSERT INTO Student (StudentId, StudentName, StudentContact, StudentEmail, StudentSession, Gender)
 VALUES
 (101, "Rahul Sharma", "8821842341", "rahulkumar219209200@gmail.com", "2022-24", "Male"),
 (102, "Aman Ranjan", "88218424561", "rahulkumar219209200@gmail.com", "2022-24", "Male"),
 (103, "Aaryan kumar", "88215656341", "rahulkumar219209200@gmail.com", "2022-24", "Male");
+
+-- Admin Table 
 
 CREATE TABLE Admin
 (AdminId BIGINT PRIMARY KEY,
@@ -27,12 +35,28 @@ VALUES
 (2, "Manoj Kumar Yadav", "8821842451", "Admin@2"),
 (3, "Prabhat Kumar", "8821566341", "Admin@3");
 
+-- BorrowRegister 
+
+CREATE TABLE BorrowRegister(
+BorrowId int PRIMARY KEY AUTO_INCREMENT,
+BookId int NOT NULL,
+StudentId BIGINT NOT NULL,
+IssueDate DATE,
+ReturnDate DATE,
+FOREIGN KEY (BookId) references Book(BookId),
+FOREIGN KEY (StudentId) references Student(StudentId)
+);
+
+
+-- Queries 
 
 SELECT * FROM Student WHERE StudentId = 101;
 SELECT * FROM Student WHERE StudentId = "101";
 SELECT * FROM Book WHERE BookName LIKE '%algo%';
 SELECT * FROM Student WHERE StudentName LIKE '%ra%';
 SELECT * FROM Admin;
+
+-- Book Table 
 
 create table Book 
 (BookId int primary key, 
