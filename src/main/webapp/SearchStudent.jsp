@@ -34,7 +34,7 @@
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
         	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
-        	<li class="navli"><a class="nav-link" href="SearchStudent.php">Search Student</a></li>
+        	<li class="navli"><a class="nav-link" href="SearchStudent.jsp">Search Student</a></li>
             <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
             <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
             <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
@@ -48,18 +48,24 @@
     </div>
 
 <div class="container2">
-		<div id="f">
-			<h1>Search Student</h1>
-				<form action="SearchingStudent.jsp" method="post">
-	
-           <p style="font-size:10px"><pre>Student Id :     </pre></p><input type="number" name="t1" palceholder="Enter Student Id" style="padding:5px"><input type="submit" value="Search Id" name="b1" style="padding:5px">
-           <p>OR</p>
-           <p style="font-size:10px"><pre>Student Name :     </pre></p><input type="text" name="t2" palceholder="Student Name" style="padding:5px"><input type="submit" value="Search Name" name="b1" style="padding:5px;">
-       		<p>OR</p>
-            
-            <input type="submit" value="Search All" name="b1">
-        
+		<div id ="s">
+
+		<div class="searchform">
+			<h1 style="text-align:center; margin:0px;">Search Student</h1>
+				<form action="SearchingBook.jsp" method="post">
+
+           <p style="font-size:20px;  margin: 5px;" >Student Id :     <input style="margin-left:32px;" type="number" name="t1" placeholder="Enter Student Id" >
+           <input type="submit" value="Search Id" name="b1" ></p>
+           <p style="text-align:center; margin: 5px;" >OR</p>
+           <p style="font-size:20px; margin:5px">Student Name :  <input type="text" name="t2" placeholder="Enter Student Name" >
+           <input type="submit" value="Search Name" name="b1" ></p>
+       		<p style="text-align:center; margin: 5px;">OR</p>
+            <div class="button-group">
+            <input type="submit" value="Search All" name="b1" style="margin: 5px;">
+            </div>
 	</form>
+        </div>
+        </div>
         </div>
         
 </body>

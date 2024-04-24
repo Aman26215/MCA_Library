@@ -36,28 +36,17 @@
 				<img src="images/Logo5.png" class="src2">Menu
 			</header>
 			<ul class="navul">
-				<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add
-						Student</a></li>
-				<li class="navli"><a class="nav-link" href="SearchStudent.php">Search
-						Student</a></li>
-				<li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update
-						Student Details</a></li>
-				<li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete
-						Student</a></li>
-				<li class="navli"><a class="nav-link" href="AddBook.jsp">Add
-						Book</a></li>
-				<li class="navli"><a class="nav-link" href="SearchBook.jsp">Search
-						Book</a></li>
-				<li class="navli"><a class="nav-link"
-					href="ViewIssuedDetails.jsp?btn=All">View Issued and Returned
-						Book</a></li>
-				<li class="navli"><a class="nav-link"
-					href="ViewIssuedDetails.jsp?btn=Returned">View Returned Book</a></li>
-				<li class="navli"><a class="nav-link"
-					href="ViewIssuedDetails.jsp?btn=Issued">Not Returned</a></li>
-				<li class="navli"><a class="nav-link"
-					href="ViewIssuedDetails.jsp?btn=Issued">Return Book</a></li>
-			</ul>
+        	<li class="navli"><a class="nav-link" href="AddStudent.jsp">Add Student</a></li>
+        	<li class="navli"><a class="nav-link" href="SearchStudent.jsp">Search Student</a></li>
+            <li class="navli"><a class="nav-link" href="UpdateStudent.jsp">Update Student Details</a></li>
+            <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
+            <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
+            <li class="navli"><a class="nav-link" href="SearchBook.jsp">Search Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">View Issued and Returned Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Returned">View Returned Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">Not Returned</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">Return Book</a></li>
+        </ul>
 		</nav>
 	</div>
 	<div class="container2" >
