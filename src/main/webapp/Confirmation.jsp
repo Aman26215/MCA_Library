@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="css/Dashboard.css">
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache, no-store");
+	%>
 	<nav id="navbar">
 		<div id="logo">
 			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
@@ -222,8 +225,7 @@
 				<%=st6%></p>
 			<p>Do you Sure Want to Delete this Student?</p>
 			<div class="button-group-c">
-				<form
-					action="ActionOnStudent.jsp?&b1=DeleteStudent&RollNo=<%=st1%>"
+				<form action="ActionOnStudent.jsp?&b1=DeleteStudent&RollNo=<%=st1%>"
 					method="post">
 					<input type="Submit" value="Yes, I Confirm!">
 				</form>
@@ -306,6 +308,7 @@
 
 		String sname = null, scontact = null, semail = null, ssession = null, sgender = null, bname = null, bauthor = null,
 				bpublication = null, bisbn = null;
+		int cap = -1;
 
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM Student WHERE Studentid=" + sid);
@@ -316,14 +319,23 @@
 		semail = rs.getString(4);
 		ssession = rs.getString(5);
 		sgender = rs.getString(6);
+		cap = rs.getInt(7);
 		flag = 1;
 		}
 		if (flag == 0) {
 		out.println("<script>alert('Student Does Not Exist.')</script>");
 		%>
 		<script>
-	                window.location.href = "IssueBook.jsp?BookId=<%=bid%>
-			";
+	                window.location.href = "IssueBook.jsp?BookId=<%=bid%>";
+		</script>
+		<%
+		}
+		if (cap <= 0) {
+		flag = 0;
+		out.println("<script>alert('This Student already Borrowed a Book.')</script>");
+		%>
+		<script>
+		                window.location.href = "IssueBook.jsp?BookId=<%=bid%>";
 		</script>
 		<%
 		}
