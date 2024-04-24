@@ -258,6 +258,26 @@ div.scroll {
     background-color: #c5c5e7;
  }
  
+ .error-container{
+    width: fit-content;
+    margin: 15% auto;
+    padding: 35px;
+    border: 5px solid grey;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lemon green;
+
+ }
+ 
+ #errorimg::before {
+    content: "";
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    z-index: 1;
+}
  .button-group-c{
     margin-top: 20px;
     text-align: center;
