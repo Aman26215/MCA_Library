@@ -48,21 +48,30 @@
     </div>
 
 <div class="container2">
-	<div id="f">
+
+<div id ="s">
+
 		<div class="searchform">
-			<h1>Search Book</h1>
+			<h1 style="text-align:center; margin:0px;">Search Book</h1>
 				<form action="SearchingBook.jsp" method="post">
 	
-           <p style="font-size:10px"><pre>Book Id :     </pre></p><input type="number" name="t1" palceholder="Enter Book Id" style="padding:5px"><input type="submit" value="Search Id" name="b1" style="padding:5px">
-           <p>OR</p>
-           <p style="font-size:10px"><pre>Book Name :     </pre></p><input type="text" name="t2" palceholder="Enter Book Name" style="padding:5px"><input type="submit" value="Search Name" name="b1" style="padding:5px;">
-       		<p>OR</p>
-            
-            <input type="submit" value="Search All" name="b1">
-        
+           <p style="font-size:20px;  margin: 5px;" >Book Id :     <input style="margin-left:32px;" type="number" name="t1" placeholder="Enter Book Id" >
+           <input type="submit" value="Search Id" name="b1" ></p>
+           <p style="text-align:center; margin: 5px;" >OR</p>
+           <p style="font-size:20px; margin:5px">Book Name :  <input type="text" name="t2" placeholder="Enter Book Name" >
+           <input type="submit" value="Search Name" name="b1" ></p>
+       		<p style="text-align:center; margin: 5px;">OR</p>
+            <div class="button-group">
+            <input type="submit" value="Search All" name="b1" style="margin: 5px;">
+            </div>
 	</form>
+
+	    
+
 	</div>
+
         </div>
         </div>
+        
 </body>
 </html>

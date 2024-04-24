@@ -28,6 +28,7 @@ if(bt.equalsIgnoreCase("Search Id")) {
                 
 %>		<div class="scroll">
             <table border=1>
+            <thead>
                 <tr>
                     <th>BookId</th>
                     <th>Book Name</th>
@@ -37,9 +38,11 @@ if(bt.equalsIgnoreCase("Search Id")) {
                     <th>Order Received</th>
                     <th>Link</th>
                 </tr>
+                </thead>
                 <%
 				while (rs.next()) {
 				%>
+				<tbody>
                 <tr>
                     <td><%=rs.getString(1)%></td>
                     <td><%=rs.getString(2)%></td>
@@ -53,6 +56,7 @@ if(bt.equalsIgnoreCase("Search Id")) {
 			<% }else { %>Book Already Issued<% } %>
 			</td>
                 </tr>
+                </tbody>
 				<%
 				}con.close();
 				%>
