@@ -9,7 +9,7 @@
 <title>Admin Dashboard</title>
 <link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
-<link rel="stylesheet" href="css/HomePageStyle.css">
+
 
 
 </head>
@@ -19,11 +19,14 @@
 		<div id="logo">
 			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
 		</div>
+		
 		<ul>
 			<li class="item"><p>Welcome <%=session.getAttribute("AdminName")%></p>
-			<p> __Your Admin Id is :<%=session.getAttribute("AdminId")%></p></li>
+			<p>Your Admin Id is :<%=session.getAttribute("AdminId")%></p></li>
 		</ul>
-		
+		<div id="logout">
+        <a href="AdminLogin.html"><button>Logout</button></a>
+        </div>
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
 		</div>
@@ -80,6 +83,6 @@
 
     	  
     </div>
-  </div>	
+	
 </body>
 </html>
