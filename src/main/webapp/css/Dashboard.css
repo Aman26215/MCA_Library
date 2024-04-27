@@ -204,10 +204,20 @@ div.scroll {
     overflow-y: scroll;
     display: fit-content;
     font-size: 18px;
-        }
+        }  
+        
  
+
  
   /* Style the scrollbar */
+
+.items{
+	display:list;
+}
+
+ 
+  /* Containers */
+
   
   #container {
             overflow: auto;
@@ -276,30 +286,38 @@ div.scroll {
     opacity: 0.9;
     z-index: 1;
 }
- .button-group-c{
-    margin-top: 20px;
-    text-align: center;
-    display: flex;
-    padding-left: 38px;
-    padding-top: 20px;
- }
- 
- .button-group-c input[type="submit"] {
-        padding: 10px 20px;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
+
+
+/*Buttons*/
+
+
+#logout {
+        margin-left: auto;
+        margin-top: 50px;
+}
+
+#logout button {
+        background-color: aquamarine;
+        color: black;
+        border: 2px solid grey;
+        border-radius: 3px;
+        padding: 5px 10px;
         cursor: pointer;
-        border-radius: 5px;
-        margin-right: 10px;
-    }
- .button-group {
+}
+
+#logout button:hover {
+  background-color: white; 
+}
+
+.button-group-c{
         margin-top: 20px;
         text-align: center;
-    }
-
-    .button-group input[type="submit"],
-    .button-group input[type="reset"] {
+        display: flex;
+        padding-left: 38px;
+        padding-top: 20px;
+}
+ 
+.button-group-c input[type="submit"] {
         padding: 10px 20px;
         border: none;
         background-color: #007bff;
@@ -307,9 +325,25 @@ div.scroll {
         cursor: pointer;
         border-radius: 5px;
         margin-right: 10px;
-    }
+}
 
-    .button-group input[type="submit"]:hover,
-    .button-group input[type="reset"]:hover {
+.button-group {
+        margin-top: 20px;
+        text-align: center;
+}
+
+.button-group input[type="submit"],
+.button-group input[type="reset"] {
+        padding: 10px 20px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-right: 10px;
+}
+
+.button-group input[type="submit"]:hover,
+.button-group input[type="reset"]:hover {
         background-color: #0056b3;
-    }
+}

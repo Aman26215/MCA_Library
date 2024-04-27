@@ -48,7 +48,7 @@
 	<h1>Issue Book to Student</h1>
 	<form action="Confirmation.jsp" method="post">
 		<p>Book Id : </p><input name="t1" value="<%= bid %>" readonly >
-		<p>Student Id : </p><input type="number" name="t2" placeholder="Enter Student Roll No." >
+		<p>Student Id : </p><input type="number" name="t2" placeholder="Enter Student Roll No." required>
 		<input type="submit" name= "b1" value="Issue">
 		
 	</form>

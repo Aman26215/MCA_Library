@@ -5,42 +5,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/Dashboard.css">
 <style>
-  body {
+body{
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    background-color: lavender;
     height: 100vh;
   }
-#errorContainer{
-    position: relative;
-}
-
-  .error-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+ .error-container {
+    background-color: antiquewhite;
     text-align: center;
   }
 
-  h1 {
+h1{
     color: #ff6347;
     font-size: 24px;
-  }
 
-  p {
+}
+
+p{
     color: #333;
     font-size: 18px;
-  }
+}
 
-  .button-group {
-    margin-top: 20px;
-  }
-
-  button {
-    background-color: #4caf50;
+button{
+    background-color: deepskyblue;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -50,20 +40,21 @@
     transition: background-color 0.3s;
   }
 
-  button:hover {
+button:hover {
     background-color: #45a049;
   }
 </style>
+
 </head>
+
 <body>
-<div id="errorContainer">
-<img id="errorimg" src="images/error.jpg" class="src">
 
 <div class="error-container">
+       
         <h1>Error - Something Went Wrong</h1>
         <p>Sorry, there is some issue.</p>
         <a href="AdminDashboard.jsp"><button>Back to Dashboard</button></a>
-        </div> 
-        </div> 
+</div> 
+   
 </body>
 </html>

@@ -42,10 +42,10 @@
             <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
             <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
             <li class="navli"><a class="nav-link" href="SearchBook.jsp">Search Book</a></li>
-            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">View Issued and Returned Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">Borrow History</a></li>
             <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Returned">View Returned Book</a></li>
-            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">Not Returned</a></li>
-            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Issued">Return Book</a></li>
+            <li class="navli"><a class="nav-link" href="Returing.jsp?bt=Search All">Not Returned</a></li>
+            <li class="navli"><a class="nav-link" href="Return.jsp">Return Book</a></li>
         </ul>
 		</nav>
 	</div>
@@ -290,6 +290,7 @@
 		// End of Add book
 
 		//Issue Book
+		
 		if (btn.equalsIgnoreCase("Issue")) {
 		String bid = request.getParameter("t1");
 		int bid1 = Integer.parseInt(bid);
@@ -383,7 +384,7 @@
 		<p>Do you Sure Want to Issue this Book to above Student?</p>
 		<div class="button-group-c">
 			<form
-				action="Issuing.jsp?&b1=Issue&BookId=<%=bid%>&StudentId=<%=sid%>"
+				action="FinalAction.jsp?&b1=Issue&BookId=<%=bid%>&StudentId=<%=sid%>"
 				method="post">
 				<input type="Submit" value="Yes, I Confirm!">
 			</form>
@@ -395,6 +396,128 @@
 		<%
 		}
 		}
+		// End of Issue Book
+		
+		
+		// Return Book
+		
+				if (btn.equalsIgnoreCase("Return")) {
+					String BorrowId = request.getParameter("BorrowId");
+
+				String bid= null, sid=null, sname = null, scontact = null, semail = null, ssession = null, sgender = null, bname = null, bauthor = null,
+						bpublication = null, bisbn = null, bIssueDate= null;
+				int cap = -1;
+				int qun = -1;
+
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery("SELECT IssueDate, BorrowRegister.BookId, BookName, Author, Publication, Quantity, ISBN_No, BorrowRegister.StudentId, StudentName, StudentContact, StudentEmail, StudentSession, Gender, Capacity FROM BorrowRegister inner join Book on BorrowRegister.BookId=Book.BookId inner join Student on BorrowRegister.StudentId=Student.StudentId where BorrowId ="+BorrowId);
+				int flag = 0;
+				while (rs.next()) {
+				bIssueDate = rs.getString(1);
+				bid = rs.getString(2);
+				bname = rs.getString(3);
+				bauthor = rs.getString(4);
+				bpublication = rs.getString(5);
+				qun = rs.getInt(6);
+				bisbn = rs.getString(7);
+				sid = rs.getString(8);
+				sname = rs.getString(9);
+				scontact = rs.getString(10);
+				semail = rs.getString(11);
+				ssession = rs.getString(12);
+				sgender = rs.getString(13);
+				cap = rs.getInt(14);
+				
+				flag = 1;
+				}
+				if (flag == 0) {
+				out.println("<script>alert('Book Already Returned.')</script>");
+				%>
+				<script>
+			                window.location.href = "AdminDashboard.jsp";
+				</script>
+				<%
+				}
+				if (cap > 0 || qun > 0) {
+				flag = 0;
+				out.println("<script>alert('Book Already Returned.')</script>");
+				%>
+				<script>
+				                window.location.href = "AdminDashboard.jsp";
+				</script>
+				<%
+				}
+				if (flag == 1) {
+				
+				%>
+				<div id="issueConfirmation">
+				<div class="confirmation"  >
+					<h1>Book Detail</h1>
+					<p>
+						Book Id :
+						<%=bid%></p>
+					<p>
+						Book Name :
+						<%=bname%></p>
+					<p>
+						Author :
+						<%=bauthor%></p>
+					<p>
+						Publication :
+						<%=bpublication%></p>
+					<p>
+						ISBN No. :
+						<%=bisbn%></p>
+				</div>
+				<div class="confirmation">
+					<h1>Student Detail</h1>
+					<p>
+						Student Id :
+						<%=sid%></p>
+					<p>
+						Student Name :
+						<%=sname%></p>
+					<p>
+						Contact :
+						<%=scontact%></p>
+					<p>
+						Email :
+						<%=semail%></p>
+					<p>
+						Session :
+						<%=ssession%></p>
+					<p>
+						Gender :
+						<%=sgender%></p>
+				</div>
+				<div class="confirmation">
+					<h1>Borrow Details</h1>
+					<p>
+						Borrow No. :
+						<%=BorrowId%></p>
+					<p>
+						Issue Date :
+						<%=bIssueDate%></p>
+				</div>
+				</div>
+				
+				
+				<div class="c">
+				<p>Do you Confirm this Return?</p>
+				<div class="button-group-c">
+					<form
+						action="FinalAction.jsp?&b1=Return&BorrowId=<%=BorrowId%>"
+						method="post">
+						<input type="Submit" value="Yes, I Confirm!">
+					</form>
+					<form action="Returning.jsp?b1=Search All" method="post">
+						<input type="submit" value="No">
+					</form>
+				</div>
+				</div>
+				<%
+				}
+				}
 
 		} catch (Exception e) {
 		e.printStackTrace();
