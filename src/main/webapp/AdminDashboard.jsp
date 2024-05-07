@@ -4,13 +4,9 @@
 <html>
 <head>																							
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
 <title>Admin Dashboard</title>
 <link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
-
-
 
 </head>
 <body>
@@ -22,10 +18,10 @@
 		
 		<ul>
 			<li class="item"><p>Welcome <%=session.getAttribute("AdminName")%></p>
-			<p>Your Admin Id is :<%=session.getAttribute("AdminId")%></p></li>
+			<p>Admin Id :<%=session.getAttribute("AdminId")%></p></li>
 		</ul>
 		<div id="logout">
-        <a href="AdminLogin.html"><button>Logout</button></a>
+        <a href="logout"><button>Logout</button></a>
         </div>
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
@@ -44,8 +40,7 @@
             <li class="navli"><a class="nav-link" href="DeleteStudent.jsp">Delete Student</a></li>
             <li class="navli"><a class="nav-link" href="AddBook.jsp">Add Book</a></li>
             <li class="navli"><a class="nav-link" href="SearchBook.jsp">Search Book</a></li>
-            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=All">Borrow History</a></li>
-            <li class="navli"><a class="nav-link" href="ViewIssuedDetails.jsp?btn=Returned">View Returned Book</a></li>
+            <li class="navli"><a class="nav-link" href="ViewHistory.jsp">Borrow History</a></li>
             <li class="navli"><a class="nav-link" href="Returning.jsp?b1=Search All">Not Returned</a></li>
             <li class="navli"><a class="nav-link" href="Return.jsp">Return Book</a></li>
         </ul>

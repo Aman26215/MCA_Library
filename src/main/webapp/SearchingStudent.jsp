@@ -25,7 +25,7 @@ if(bt.equalsIgnoreCase("Search Id")) {
         
         ResultSet rs = pstm.executeQuery();
                 
-%>
+%>		<div class="scroll">
             <table border=1>
                 <tr>
                     <th>StudentId</th>
@@ -34,6 +34,7 @@ if(bt.equalsIgnoreCase("Search Id")) {
                     <th>Email</th>
                     <th>Session</th>
                     <th>Gender</th>
+                    <th>Status</th>
                 </tr>
                 <%
 				while (rs.next()) {
@@ -45,12 +46,14 @@ if(bt.equalsIgnoreCase("Search Id")) {
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(5)%></td>
                     <td><%=rs.getString(6)%></td>
+                    <td><%if(rs.getInt(7) > 0){%>  <%}else{%>Book Borrowed<%} %></td>
                 </tr>
 				<%
 				}con.close();
 				%>
 				
 			</table>
+			</div>
 			<%
     } catch(Exception e) {
         System.out.println(e);
@@ -70,7 +73,7 @@ if(bt.equalsIgnoreCase("Search Name")) {
         pstm.setString(1, sname);
         ResultSet rs = pstm.executeQuery();
         
-%>
+%>		<div class="scroll">
             <table border=1>
                 <tr>
                     <th>StudentId</th>
@@ -79,6 +82,7 @@ if(bt.equalsIgnoreCase("Search Name")) {
                     <th>Email</th>
                     <th>Session</th>
                     <th>Gender</th>
+                    <th>Status</th>
                 </tr>
                 <%
 				while (rs.next()) {
@@ -90,12 +94,14 @@ if(bt.equalsIgnoreCase("Search Name")) {
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(5)%></td>
                     <td><%=rs.getString(6)%></td>
+                    <td><%if(rs.getInt(7) > 0){%>  <%}else{%>Book Borrowed<%} %></td>
                 </tr>
 				<%
 				}con.close();
 				%>
 				
 			</table>
+			</div>
 			<%
     
     } catch(Exception e) {
@@ -122,7 +128,7 @@ if(bt.equalsIgnoreCase("Search All")) {
         PreparedStatement pstm = con.prepareStatement("SELECT * FROM Student");
         ResultSet rs = pstm.executeQuery();
         
-%>
+%>		<div class="scroll">
             <table border=1>
                 <tr>
                     <th>StudentId</th>
@@ -131,6 +137,7 @@ if(bt.equalsIgnoreCase("Search All")) {
                     <th>Email</th>
                     <th>Session</th>
                     <th>Gender</th>
+                    <th>Status</th>
                 </tr>
                 <%
 				while (rs.next()) {
@@ -142,12 +149,14 @@ if(bt.equalsIgnoreCase("Search All")) {
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(5)%></td>
                     <td><%=rs.getString(6)%></td>
+                    <td><%if(rs.getInt(7) > 0){%>  <%}else{%>Book Borrowed<%} %></td>
                 </tr>
 				<%
 				}con.close();
 				%>
 				
 			</table>
+			</div>
 			<%
     } catch(Exception e) {
         System.out.println(e);

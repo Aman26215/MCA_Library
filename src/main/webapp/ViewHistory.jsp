@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Book</title>
+<title>Accession</title>
+
 <link rel="stylesheet" href="css/HomePageStyle.css">
 <link rel="stylesheet" href="css/Dashboard.css">
 </head>
@@ -54,23 +55,68 @@
     </nav>
     </div>
 
-<div class="container2">
-<div id="f">
-	<h1>Add New Book</h1>
-    
-        <form Action="Confirmation.jsp" method="post">
-        	<pre><p>Book Id :       <input type="number"   name="BookId" id="BookId" placeholder="Enter Book Id" required></p></pre>
-            <pre><p>Book Name :     <input type="text" size="50" name="BookName" id="BookName" placeholder="Enter Book Name" required></p></pre>
-            <pre><p>Author :        <input type="text" size="50" name="Author" id="Author" placeholder="Enter Author Name" required></p></pre>
-            <pre><p>Publication :   <input type="text" size="50" name="Publication" id="Publication" placeholder="Publication Name" required></p></pre>
-            <pre><p>ISBN Number :   <input type="text" size="50" name="ISBN" id="ISBN" placeholder="ISBN Number" required></p></pre>
-            <pre><p>Date of Receiving :   <input type="date" size="50" name="Date" id="Date" placeholder="Date" required></p></pre>
-             <div class="button-group">        	   
-             <input type="Submit" value="Add Book" name="b1">    <input type="RESET" value="Reset">
-             </div>
-        </form>
-        </div>
-        </div>
-        </container>
+	<%@ page import="java.sql.*"%>
+	<%
+	try {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "root", "Admin@123");
+	
+		
+
+			PreparedStatement pstm = con.prepareStatement("select BorrowId, BorrowRegister.BookId, BookName, BorrowRegister.StudentId, StudentName, StudentContact, IssueDate, ReturnDate from BorrowRegister inner join Book on BorrowRegister.BookId=Book.BookId inner join Student on BorrowRegister.StudentId=Student.StudentId ORDER BY BorrowId DESC");
+
+			ResultSet rs = pstm.executeQuery();
+			int flag=0;
+			
+	%>
+	<div class="scroll">
+		<table border=1>
+			<thead>
+				<tr>
+					<th>Borrow No.</th>
+					<th>Book Id</th>
+					<th>Book Name</th>
+					<th>Student Id</th>
+					<th>Student Name</th>
+					<th>Contact</th>
+					<th>Borrow Date</th>
+					<th>Return Date</th>
+				</tr>
+			</thead>
+			<%
+			while (rs.next()) {
+				flag=1;
+			%>
+			<tbody>
+				<tr>
+					<td><%=rs.getString(1)%></td>
+					<td><%=rs.getString(2)%></td>
+					<td><%=rs.getString(3)%></td>
+					<td><%=rs.getString(4)%></td>
+					<td><%=rs.getString(5)%></td>
+					<td><%=rs.getString(6)%></td>
+					<td><%=rs.getString(7)%></td>
+					<td><%=rs.getString(8)%></td>
+				</tr>
+			</tbody>
+			<%
+			}
+			con.close();
+			%>
+
+		</table>
+	
+	<%if(flag==0){%>
+				 <p style="color:Red;position: relative; text-align:center; font-weight:Bold">No Borrowed Book Available</p>
+				 
+	                <%
+			}%></div></container><%
+	
+	
+	}catch (Exception e) {
+		System.out.println(e);
+		}
+	%>
+		
 </body>
 </html>
