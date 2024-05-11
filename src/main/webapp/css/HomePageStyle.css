@@ -1,17 +1,26 @@
 
 body {
-  background-color: white;
   overflow: hidden;
+  background-color: #116466;
 }
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+
+
+
 
 /* Navigation Bar */
 #navbar {
-  background-color: lightcyan;
+  background-color: #ffffff;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   top: 0;
   left: 0;
+  height : 50px;
   bottom: 800px;
   width: 100%;
   z-index : 2;
@@ -27,30 +36,21 @@ body {
 #logo img {
 margin: 1px;
     max-height: 120px;
-    max-width: 80px;
+    max-width: 50px;
 }
 
 
 
 /* Navigation Bar: list styling */
 
-#navbar::before {
-  content: "";
-  position: absolute;
-  height: 113px;
-  width: 100%;
-  z-index: -1;
-  margin-top: -30px;
-  top: 0;
-  left: 0;
-}
+
 
 #navbar ul {
   display: flex;
-  margin-top: -24px;
+  margin-top: 0px;
   font-family: 'Baloo Bhai', cursive;
   padding-right: 24px;
-  padding-top: 26px;
+  padding-top: 0px;
 }
 
 #navbar ul li {
@@ -73,20 +73,31 @@ margin: 1px;
   background-color: rgb(114, 233, 223);
 }
 
+ a:link{
+     color: blue;
+     text-decoration: none;
+ }
+ 
+ a:visited{
+     color: blue;
+     text-decoration: none;
+ }
+ 
+ a:hover{
+     color: white;
+     text-decoration: none;
+ }
 
 .reg-div {
-	padding-top: 496px;
+	padding-top: 290px;
     padding-left: 64px;
     position: fixed;
     z-index: 3;
-    font-size: 28px;
-    color: white;
+    background-color: darkcyan;
+    background-clip: content-box;
+    font-size: x-large;
+    color: floralwhite;
 }
-
-.reg-button {
-	
-}
-
 
 #container {
   position: absolute;
@@ -173,7 +184,7 @@ margin: 1px;
 }
 
 #slide-select {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   left: 20px;
   z-index: 100;

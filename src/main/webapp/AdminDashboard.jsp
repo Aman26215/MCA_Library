@@ -17,8 +17,14 @@
 		</div>
 		
 		<ul>
-			<li class="item"><p>Welcome <%=session.getAttribute("AdminName")%></p>
-			<p>Admin Id :<%=session.getAttribute("AdminId")%></p></li>
+
+			<li class="item" style="padding-right:20px;margin-left: 220px;"><p>
+		Welcome
+		<%=session.getAttribute("AdminName")%></p></li>
+			<li class="item"><p>
+		Your Admin Id is :
+		<%=session.getAttribute("AdminId")%></p></li>
+			
 		</ul>
 		<div id="logout">
         <a href="logout"><button>Logout</button></a>

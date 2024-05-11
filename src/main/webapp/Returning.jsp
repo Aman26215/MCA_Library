@@ -57,7 +57,7 @@
 					<td><%=rs.getString(5)%></td>
 					<td><%=rs.getString(6)%></td>
 					<td><%=rs.getString(7)%></td>
-					<td><a href="Confirmation.jsp?BorrowId=<%=rs.getInt(1)%>">Return</a>
+					<td><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
 					</td>
 				</tr>
 			</tbody>
@@ -121,7 +121,7 @@
 					<td><%=rs.getString(5)%></td>
 					<td><%=rs.getString(6)%></td>
 					<td><%=rs.getString(7)%></td>
-					<td><a href="Confirmation.jsp?BorrowId=<%=rs.getInt(1)%>">Return</a>
+					<td><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
 					</td>
 				</tr>
 			</tbody>

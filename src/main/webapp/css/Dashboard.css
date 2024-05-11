@@ -2,28 +2,18 @@
 
 #navbar2 {
     text-align: initial;
-    border-right: 2px solid rgb(0, 0, 0);
     padding-right: 14px;
     position: relative;
     padding-left: 0px;
     font-family: sans-serif;
     left: 0;
-    height: 100vh;
+    height: 100%;
     top: 0;
-    background-color: #69c4d5;
-    width: 270px;
+    background-color: #90fffe;
+    width: 200px;
   }
   
-#navbar2::before {
-    content: "";
-    background: url(https://images.ctfassets.net/mrop88jh71hl/55rrbZfwMaURHZKAUc5oOW/9e5fe805eb03135b82e962e92169ce6d/python-programming-language.png?w=1080&h=1080&q=100&fm=webp) no-repeat center center/cover;
-    position: absolute;
-    width: 104px;
-    height: 84px;
-    margin-left: -3px;
-    margin-top: -3px;
-    z-index: -1;
-}
+
 
   main {
       text-align: left;
@@ -43,10 +33,10 @@
   }
   
   .navli {
-    padding: 12px 18px;
-    border: 1px solid #09c2ff;
+    padding: 12px 12px;
+    border-bottom: 1px solid #899497;
     list-style: none;
-    font-size: 17px;
+    font-size: 19px;
     font-family: 'Times New Roman', Times, serif;
   }
   
@@ -69,20 +59,21 @@
       margin-bottom: 0px;
   }
   
-  main::before {
-      content: "";
-      background: url(https://images.ctfassets.net/mrop88jh71hl/55rrbZfwMaURHZKAUc5oOW/9e5fe805eb03135b82e962e92169ce6d/python-programming-language.png?w=1080&h=1080&q=100&fm=webp) no-repeat center center/cover;
-      position: relative;
-      width: 746px;
-      height: 883px;
-      margin-top: -157px;
-      margin-left: -29px;
-      z-index: -1;
-      opacity: 0.55;
-  }
+ 
  container{
     display:flex;
   }
+  
+#partion::before {
+    content: "";
+    background-image : url();
+    position: absolute;
+    width: 104px;
+    height: 84px;
+    margin-left: -3px;
+    margin-top: -3px;
+    z-index: -1;
+}
  
  #f h1 {
         text-align: center;
@@ -293,7 +284,6 @@ div.scroll {
 
 #logout {
         margin-left: auto;
-        margin-top: 50px;
 }
 
 #logout button {
