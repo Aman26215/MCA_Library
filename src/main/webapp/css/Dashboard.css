@@ -9,7 +9,7 @@
     left: 0;
     height: 100%;
     top: 0;
-    background-color: #90fffe;
+    background-color: #62ebeaf5;
     width: 200px;
   }
   
@@ -34,7 +34,7 @@
   
   .navli {
     padding: 12px 12px;
-    border-bottom: 1px solid #899497;
+    border-bottom: 1px solid #023f2d;
     list-style: none;
     font-size: 19px;
     font-family: 'Times New Roman', Times, serif;
@@ -132,8 +132,8 @@
     }
   
  #childcontainer {
-        border: 3px solid grey;
-        background-color: blue;
+        border: 3px solid #1b593e;
+        background-color:#08898899;
         height: 50px;
         width:50px;
         }
@@ -155,29 +155,29 @@
     width: fit-content;
     margin: auto;
     padding: 0px 50px 25px 50px;
-    border: 5px solid grey;
+    border: 5px solid #1f717c;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
-    background-color: #a097e3;
+    background-color:#0f705552;
  }
  
  #s{
     width: fit-content;
     margin: -30px auto;
     padding: 0px 25px 10px 20px;
-    border: 5px solid grey;
+    border: 5px solid #1f717c;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
-    background-color: #a097e3;
+    background-color: #0f705552;
  }
  
 .table-content {
  	width: fit-content;
     margin: auto;
     padding: 0px 50px 25px 50px;
-    border: 5px solid grey;
+    border: 5px solid #1f717c;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
@@ -223,8 +223,8 @@ div.scroll {
     }
   
   #childcontainer {
-        border: 3px solid grey;
-        background-color: blue;
+        border: 3px solid #1b593e;
+        background-color: #1fa09fab;
         margin: 25px;
         padding: 70px;
         border-radius: 15px;
@@ -287,9 +287,9 @@ div.scroll {
 }
 
 #logout button {
-        background-color: aquamarine;
+        background-color: #87bdc5e8;
         color: black;
-        border: 2px solid grey;
+        border: 2px solid #1f717c;
         border-radius: 3px;
         padding: 5px 10px;
         cursor: pointer;
