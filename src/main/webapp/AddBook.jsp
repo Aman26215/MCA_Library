@@ -5,38 +5,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Book</title>
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
-		<ul>
+		
+		<ul id="AdminDetails">
 
-			<li class="item"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
-		
 		<div id="logout">
         <a href="logout"><button>Logout</button></a>
         </div>
-		
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
 		</div>
 		
 	</nav>
 	
-	
-<container>
-<div class="container1">
+	<div id="partion">
+	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -55,22 +52,22 @@
     </div>
 
 <div class="container2">
-<div id="f">
-	<h1>Add New Book</h1>
+	<h1 style="text-align:center; margin:10px;">Add New Book</h1>
+<div class="formbox">
     
         <form Action="Confirmation.jsp" method="post">
-        	<pre><p>Book Id :       <input type="number"   name="BookId" id="BookId" placeholder="Enter Book Id" required></p></pre>
-            <pre><p>Book Name :     <input type="text" size="50" name="BookName" id="BookName" placeholder="Enter Book Name" required></p></pre>
-            <pre><p>Author :        <input type="text" size="50" name="Author" id="Author" placeholder="Enter Author Name" required></p></pre>
-            <pre><p>Publication :   <input type="text" size="50" name="Publication" id="Publication" placeholder="Publication Name" required></p></pre>
-            <pre><p>ISBN Number :   <input type="text" size="50" name="ISBN" id="ISBN" placeholder="ISBN Number" required></p></pre>
-            <pre><p>Date of Receiving :   <input type="date" size="50" name="Date" id="Date" placeholder="Date" required></p></pre>
-             <div class="button-group">        	   
+        	<pre>Book Id :          <input type="number"   name="BookId" id="BookId" placeholder="Enter Book Id" required></pre>
+            <pre>Book Name :        <input type="text" size="50" name="BookName" id="BookName" placeholder="Enter Book Name" required></pre>
+            <pre>Author :           <input type="text" size="50" name="Author" id="Author" placeholder="Enter Author Name" required></pre>
+            <pre>Publication :      <input type="text" size="50" name="Publication" id="Publication" placeholder="Publication Name" required></pre>
+            <pre>ISBN Number :      <input type="text" size="50" name="ISBN" id="ISBN" placeholder="ISBN Number" required></pre>
+            <pre>Receiving Date :   <input type="date" size="50" name="Date" id="Date" placeholder="Date" required></pre>
+             <div class="button-group-search">        	   
              <input type="Submit" value="Add Book" name="b1">    <input type="RESET" value="Reset">
              </div>
         </form>
         </div>
         </div>
-        </container>
+        </div>
 </body>
 </html>

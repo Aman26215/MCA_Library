@@ -5,23 +5,22 @@
 <head>																							
 <meta charset="UTF-8">
 <title>Admin Dashboard</title>
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<link rel="stylesheet" href="css/NewDashboard.css">
 
 </head>
 <body>
 
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
 		
-		<ul>
+		<ul id="AdminDetails">
 
-			<li class="item" style="padding-right:20px;margin-left: 220px;"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
@@ -52,37 +51,101 @@
         </ul>
     </nav>
     </div>
-
     
+    <%@ page import="java.sql.*"%>
+    <%@ page import="java.text.SimpleDateFormat"%>
+	<%@ page import="java.util.Date"%>
+    <%
+    	try{
+    		Class.forName("com.mysql.jdbc.Driver");
+    	    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "root", "Admin@123");
+			int cn1 = 0,cn2 = 0,cn3 = 0,cn4 = 0,cn5 = 0;
+			String cn6;
+			
+    		Statement stmt = con.createStatement();
+    		ResultSet rs = stmt.executeQuery("SELECT count(BookId) FROM Book");
+    		while(rs.next()){
+    			cn1 = rs.getInt(1);
+    		}
+    		
+    		rs = stmt.executeQuery("SELECT count(StudentId) FROM Student");
+    		while(rs.next()){
+    			cn2 = rs.getInt(1);
+    		}
+    		rs = stmt.executeQuery("SELECT count(BorrowId) From BorrowRegister");
+    		while(rs.next()){
+    			cn3 = rs.getInt(1);
+    		}
+    		rs = stmt.executeQuery("SELECT count(BorrowId) From BorrowRegister WHERE ReturnDate IS NOT NULL;");
+    		while(rs.next()){
+    			cn4 = rs.getInt(1);
+    		}
+    		rs = stmt.executeQuery("SELECT count(BorrowId) From BorrowRegister WHERE ReturnDate IS NULL;");
+    		while(rs.next()){
+    			cn5 = rs.getInt(1);
+    		}
+    		Date d = new Date();
+	        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+	        cn6 = sdf.format(d);
+    		
+    	    %>
+    	
     <div class="container2">
     	<div id="parentcontainer">
+    	
+    <a href="SearchingBook.jsp?b1=Search All">
     <div id="childcontainer">
-        <h2>Books</h2>
+    	<img src="images/cn1.png" alt="StackLab.com" class="src3">
+    	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn1%></p>
+        <h4 style="font-family: math;">Books Available<h4>
     </div>
+    </a>
+    
+    <a href="SearchingBook.jsp?b1=Search All">
     <div id="childcontainer">
-        <h2>Students</h2>
+    	<img src="images/cn2.jpg" alt="StackLab.com" class="src3">
+    	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn2%></p>
+        <h4 style="font-family: math;">Students<h4>
     </div>
+    </a>
+    
+    <a href="SearchingBook.jsp?b1=Search All">
     <div id="childcontainer">
-        <h2>Admins</h2>
+    	<img src="images/cn3.png" alt="StackLab.com" class="src3">
+    	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn3%></p>
+        <h4 style="font-family: math;">Book Issued<h4>
     </div>
-    </div>
-    <div id="parentcontainer">
+    </a>
+    
+    <a href="SearchingBook.jsp?b1=Search All">
     <div id="childcontainer">
-        <h2>Issued</h2>
+    	<img src="images/cn4.png" alt="StackLab.com" class="src3">
+    	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn4%></p>
+        <h4 style="font-family: math;">Returned Books<h4>
     </div>
+    </a>
+    
+    <a href="SearchingBook.jsp?b1=Search All">
     <div id="childcontainer">
-        <h2>Returned</h2>
+    	<img src="images/cn5.jpg" alt="StackLab.com" class="src3">
+    	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn5%></p>
+        <h4 style="font-family: math;">Books Not Returned<h4>
     </div>
+    </a>
+    
+    
     <div id="childcontainer">
-        <h2>Not Returned</h2>
-    </div>
+    	<img src="images/cn6.png" alt="StackLab.com" class="src3">
+    	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn6%></p>
+        <h4 style="font-family: math;">Date<h4>
     </div>
 
-</div>
-
-    </container>
-
-    	  
+</div>	<%
+		con.close();
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+    %>
     </div>
 	
 </body>

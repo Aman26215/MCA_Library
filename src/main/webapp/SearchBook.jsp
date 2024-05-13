@@ -4,40 +4,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Student</title>
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<title>Search Book</title>
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
 
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
-		<ul>
+		
+		<ul id="AdminDetails">
 
-			<li class="item"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
-		
 		<div id="logout">
         <a href="logout"><button>Logout</button></a>
         </div>
-		
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
 		</div>
 		
 	</nav>
 	
-	
-<container>
-<div class="container1">
+	<div id="partion">
+	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -56,30 +53,26 @@
     </div>
 
 <div class="container2">
+	<h1 style="text-align:center; margin:10px;">Search Book</h1>
 
-<div id ="s">
-
-		<div class="searchform">
-			<h1 style="text-align:center; margin:0px;">Search Book</h1>
-				<form action="SearchingBook.jsp" method="post">
-	
-           <p style="font-size:20px;  margin: 5px;" >Book Id :     <input style="margin-left:32px;" type="number" name="t1" placeholder="Enter Book Id" >
-           <input type="submit" value="Search Id" name="b1" ></p>
-           <p style="text-align:center; margin: 5px;" >OR</p>
-           <p style="font-size:20px; margin:5px">Book Name :  <input type="text" name="t2" placeholder="Enter Book Name" >
-           <input type="submit" value="Search Name" name="b1" ></p>
-       		<p style="text-align:center; margin: 5px;">OR</p>
-            <div class="button-group">
-            <input type="submit" value="Search All" name="b1" style="margin: 5px;">
-            </div>
-	</form>
-
-	    
-
-	</div>
-
-        </div>
-        </div>
+		<div class="formbox2">
+		
+		<form action="SearchingBook.jsp" method="post">
+		
+			<pre>Book Id :     <input type="number" name="t1" placeholder="Enter Book Id" >  <input class="button-group-search-single" type="submit" value="Search Id" name="b1" ></pre>
+            
+        	<p style="text-align:center; margin: 0px;" >OR</p>
+        	
+        	<pre>Book Name :   <input type="text" name="t2" placeholder="Enter Book Name" >  <input class="button-group-search-single" type="submit" value="Search" name="b1" ></pre>
+         
+        	<p style="text-align:center; margin: 0px;" >OR</p>
         
+            <div class="button-group-search">
+            <input type="submit" value="Search All" name="b1" >
+            </div>
+         
+	</form>
+        </div>
+        </div>
 </body>
 </html>

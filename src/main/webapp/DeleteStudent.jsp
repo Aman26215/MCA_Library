@@ -4,39 +4,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<title>Delete Student</title>
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
-		<ul>
+		
+		<ul id="AdminDetails">
 
-			<li class="item"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
-		
 		<div id="logout">
         <a href="logout"><button>Logout</button></a>
         </div>
-		
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
 		</div>
 		
 	</nav>
 	
-	
-<container>
-<div class="container1">
+	<div id="partion">
+	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -53,21 +50,23 @@
         </ul>
     </nav>
     </div>
-    
-    
-    <div class="container2"  >
-    <div id="f">
-    <h1>Delete Student</h1>
-	<form  Action="Confirmation.jsp" method="post">
-        	<pre><p>Student Roll No.: <input type="number"   name="Roll No" id="RollNo" placeholder="Enter University Roll No." required></p></pre>
+
+<div class="container2">
+	<h1 style="text-align:center; margin:10px;">Update Student Details</h1>
+	
+<div class="formbox">
+	<form Action="Confirmation.jsp" method="post">
+            <h4 style="color:crimson;margin-top:5px;">*Carefully fill the Registration Number.</h4>
+	
+        	<pre>Student Registration No.: <input type="number"   name="Roll No" id="RollNo" placeholder="University Registration Number" required></pre>
                       	   
-            <div class="button-group">
+            <div class="button-group-search">
              <input type="SUBMIT" value="Delete Student" name="b1">    
              <input type="RESET" value="RESET">
              </div>
         </form>
         </div>
         </div>
-        </container>
+        </div>
 </body>
 </html>

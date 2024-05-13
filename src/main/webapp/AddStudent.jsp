@@ -6,22 +6,20 @@
 <meta charset="UTF-8">
 
 <title>Add Student</title>
-
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
 		
-		<ul>
+		<ul id="AdminDetails">
 
-			<li class="item" style="padding-right:20px;margin-left: 220px;"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
@@ -35,9 +33,8 @@
 		
 	</nav>
 	
-	
-<container>
-<div class="container1">
+	<div id="partion">
+	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -56,23 +53,23 @@
     </div>
 
 <div class="container2">
-<div id="f">
-	<h1>Student Registration Form</h1>
+	<h1 style="text-align:center; margin:10px;">Add New Student</h1>
+<div class="formbox">
     
         <form Action="Confirmation.jsp" method="post">
-        	<pre><p>Student Roll No.:  <input type="number"   name="Roll No" id="RollNo" placeholder="Enter University Roll No." required style="width: 374px; "></p></pre>
-            <pre><p>Student Name:      <input type="text" size="50" name="Name" id="Name" placeholder="Enter your name" required></p></pre>
-            <pre><p>Student Contact:   <input type="number" min=1000000000 max=9999999999 name="Contact" id="Contact" placeholder="Enter your Contact number" required style="width: 376px; "></p></pre>
-            <pre><p>Student E-mail Id: <input type="email" size="50" name="Email" id="Email" placeholder="Enter your email id" required></p></pre>
-            <pre><p>Session :          <input type="text" size="50" name="StudentSession" id="Session" placeholder="Enter Session" required></p></pre>
-            <pre><label for="Gender" >Gender :            <input class="inline" type="radio" name="Gender" value="Male"/ checked>Male <input class="inline" type="radio" name="Gender" value="Female"/>Female <input class="inline" type="radio" name="Gender" value="Other"/>Other</label></pre>
+        	<pre>Registration No.:  <input type="number"   name="Roll No" id="RollNo" placeholder="University Registration Number" required"></pre>
+            <pre>Student Name:      <input type="text" size="50" name="Name" id="Name" placeholder="Enter Student Name" required></pre>
+            <pre>Student Contact:   <input type="number" min=1000000000 max=9999999999 name="Contact" id="Contact" placeholder="Enter Contact number" required"></pre>
+            <pre>Student E-mail Id: <input type="email" size="50" name="Email" id="Email" placeholder="Enter E-mail address" required></pre>
+            <pre>Session :          <input type="text" size="50" name="StudentSession" id="Session" placeholder="Enter Session" required></pre>
+            <pre><label for="Gender" >Gender :            <input class="inline" type="radio" name="Gender" value="Male" checked>Male <input class="inline" type="radio" name="Gender" value="Female"/>Female <input class="inline" type="radio" name="Gender" value="Other"/>Other</label></pre>
             
-          	 <div class="button-group">
+          	 <div class="button-group-search">
              <input type="SUBMIT" value="Add Student" name="b1">    <input type="RESET" value="RESET">
              </div>
         </form>
         </div>
-        </div>
-        </container>
+	</div>
+</div>
 </body>
 </html>

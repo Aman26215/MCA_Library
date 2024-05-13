@@ -16,18 +16,21 @@ body {
     
 /* Navigation Bar */
 #navbar {
+  background-color: darkcyan;
   position: absolute;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   top: 0;
   left: 0;
+  height : 70px;
   width: 100%;
+  z-index : 2;
+     
 }
 
 /* Navigation Bar: logo and image*/
 #logo {
-  margin: 0px 16px;
-    margin-top: 7px;
     margin-left: 19px;
 }
 #logo img {
@@ -70,15 +73,28 @@ body {
   display: block;
   padding: 4px 34px;
   border-radius: 5px;
-  margin-top: 12px;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
 }
 #navbar ul li a:hover {
   color: black;
- background-color: rgb(114, 233, 223);
+  background-color: rgb(114, 233, 223);
 }
 
+ a:link{
+     color: blue;
+     text-decoration: none;
+ }
+ 
+ a:visited{
+     color: blue;
+     text-decoration: none;
+ }
+ 
+ a:hover{
+     color: white;
+     text-decoration: none;
+ }
 
 #navbar {
   display: flex;
@@ -100,6 +116,8 @@ body {
         margin-bottom: 20px;
         color: black;
     }
+    
+    .login-container input[type="text"],
     .login-container input[type="number"],
     .login-container input[type="password"] {
         width: 100%;
@@ -115,6 +133,7 @@ body {
         border: none;
         border-radius: 4px;
         padding: 10px;
+        margin-top : 25px;
         cursor: pointer;
         width: 100%;
     }

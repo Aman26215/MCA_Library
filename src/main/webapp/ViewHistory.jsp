@@ -81,6 +81,7 @@
 					<th>Contact</th>
 					<th>Borrow Date</th>
 					<th>Return Date</th>
+					<th>View Details</th>
 				</tr>
 			</thead>
 			<%
@@ -97,6 +98,7 @@
 					<td><%=rs.getString(6)%></td>
 					<td><%=rs.getString(7)%></td>
 					<td><%=rs.getString(8)%></td>
+					<td><a href="HistoryDetails.jsp?BorrowId=<%=rs.getString(1)%>"><img src="images/eye.png" class="src4"></a></td>
 				</tr>
 			</tbody>
 			<%
