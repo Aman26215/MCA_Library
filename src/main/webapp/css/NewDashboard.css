@@ -155,9 +155,7 @@ a:hover{
 .container2{
 	width: 83%;
 }
-.container2-search{
-	width: 100%;
-}
+
 
 /* Containers */
 
@@ -195,41 +193,11 @@ a:hover{
     height: 58px;
     width: 75px;
  }
-
-
-/* Search Box */
-
-.searchbox{
-	position: relative;
-    background-color: white;
-    width: fit-content;
-    margin: auto;
-    padding: 1px 10px;
-    border-radius: 5px;	
-}
-
-.singlesearchline{
-	display: flex;
-	justify-content: space-between;
-}
-
-.search-box-table{
-	justify-content : center;
-}
-
-.search-box-table tr{
-	justify-content : center;
-}
-
-.search-box-table td{
-	font-size: larger;
-	background-color: unset;
-}
-
-.search-box-table input {
-	border-radius : 5px;
-	font-size: large;
-}
+ 
+.src4{
+    height: 20px;
+    width: 20px;
+ }
 
 
 
@@ -289,7 +257,7 @@ a:hover{
 
 
 
-
+/* Table */
 
 div.scroll {
     margin-left: 21%;
@@ -319,7 +287,31 @@ table, th, td {
 }
 
 
+div.scroll2 {
+    margin: auto;
+    margin-left: 44px;
+    padding-right: 5px;
+    padding-top: 10px;
+    position: relative;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    overflow-x: overlay;
+    overflow-y: scroll;
+    font-size: 14px;
+    font-family: math;
+  } 
 
+.scroll2 th {
+	position: sticky; 
+    top: 0;
+}
+
+
+.scroll2 th, td {
+  background-color: #96D4D4;
+  padding: 6px;
+  font-size: larger;
+}
 
 
 

@@ -5,8 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Return Book</title>
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
 </head>
 <body>
 	<jsp:include page="Return.jsp" />
@@ -31,8 +29,7 @@
 			
 	%>
 	<div class="scroll">
-		<table border=1>
-			<thead>
+		<table>
 				<tr>
 					<th>Borrow No.</th>
 					<th>Book Id</th>
@@ -43,24 +40,21 @@
 					<th>Borrow Date</th>
 					<th>Link</th>
 				</tr>
-			</thead>
 			<%
 			while (rs.next()) {
 				flag=1;
 			%>
-			<tbody>
 				<tr>
-					<td><%=rs.getString(1)%></td>
-					<td><%=rs.getString(2)%></td>
+					<td style='text-align: center;'><%=rs.getString(1)%></td>
+					<td style='text-align: center;'><%=rs.getString(2)%></td>
 					<td><%=rs.getString(3)%></td>
-					<td><%=rs.getString(4)%></td>
+					<td style='text-align: center;'><%=rs.getString(4)%></td>
 					<td><%=rs.getString(5)%></td>
 					<td><%=rs.getString(6)%></td>
 					<td><%=rs.getString(7)%></td>
-					<td><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
+					<td style='text-align: center;'><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
 					</td>
 				</tr>
-			</tbody>
 			<%
 			}
 			con.close();
@@ -95,8 +89,7 @@
 			
 	%>
 	<div class="scroll">
-		<table border=1>
-			<thead>
+		<table>
 				<tr>
 					<th>Borrow No.</th>
 					<th>Book Id</th>
@@ -107,24 +100,21 @@
 					<th>Borrow Date</th>
 					<th>Link</th>
 				</tr>
-			</thead>
 			<%
 			while (rs.next()) {
 				flag=1;
 			%>
-			<tbody>
 				<tr>
-					<td><%=rs.getString(1)%></td>
-					<td><%=rs.getString(2)%></td>
+					<td style='text-align: center;'><%=rs.getString(1)%></td>
+					<td style='text-align: center;'><%=rs.getString(2)%></td>
 					<td><%=rs.getString(3)%></td>
-					<td><%=rs.getString(4)%></td>
+					<td style='text-align: center;'><%=rs.getString(4)%></td>
 					<td><%=rs.getString(5)%></td>
 					<td><%=rs.getString(6)%></td>
 					<td><%=rs.getString(7)%></td>
-					<td><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
+					<td style='text-align: center;'><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
 					</td>
 				</tr>
-			</tbody>
 			<%
 			}
 			con.close();
@@ -155,8 +145,7 @@
 			
 	%>
 	<div class="scroll">
-		<table border=1>
-			<thead>
+		<table>
 				<tr>
 					<th>Borrow No.</th>
 					<th>Book Id</th>
@@ -167,36 +156,34 @@
 					<th>Borrow Date</th>
 					<th>Link</th>
 				</tr>
-			</thead>
 			<%
 			while (rs.next()) {
 				flag=1;
 			%>
-			<tbody>
 				<tr>
-					<td><%=rs.getString(1)%></td>
-					<td><%=rs.getString(2)%></td>
+					<td style='text-align: center;'><%=rs.getString(1)%></td>
+					<td style='text-align: center;'><%=rs.getString(2)%></td>
 					<td><%=rs.getString(3)%></td>
-					<td><%=rs.getString(4)%></td>
+					<td style='text-align: center;'><%=rs.getString(4)%></td>
 					<td><%=rs.getString(5)%></td>
 					<td><%=rs.getString(6)%></td>
 					<td><%=rs.getString(7)%></td>
-					<td><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
+					<td style='text-align: center;'><a href="Confirmation.jsp?b1=Return&BorrowId=<%=rs.getInt(1)%>">Return</a>
 					</td>
 				</tr>
-			</tbody>
 			<%
 			}
 			con.close();
 			%>
 
 		</table>
+	</div>
 	
 	<%if(flag==0){%>
 				 <p style="color:Red;position: relative; text-align:center; font-weight:Bold">No Borrowed Book Available</p>
 				 
 	                <%
-			}%></div><%
+			}
 	} 
 	
 	}catch (Exception e) {

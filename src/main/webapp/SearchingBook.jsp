@@ -5,11 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Search Book</title>
-<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
 	
-	<div class="container2-search">
+	
 		<jsp:include page="SearchBook.jsp" />
 
 		<%@ page import="java.sql.*"%>
@@ -43,14 +42,14 @@
 				<%
 				while (rs.next()) {
 				%>
-				<tr style="width: 10px">
+				<tr>
 					<td style='width: 3%; text-align: center;'><%=rs.getString(1)%></td>
-					<td style='width: 12%'><%=rs.getString(2)%></td>
-					<td style='width: 12%'><%=rs.getString(3)%></td>
-					<td style='width: 12%'><%=rs.getString(4)%></td>
-					<td style='width: 6%'><%=rs.getString(6)%></td>
-					<td style='width: 6%'><%=rs.getString(7)%></td>
-					<td style='width: 6%'>
+					<td><%=rs.getString(2)%></td>
+					<td><%=rs.getString(3)%></td>
+					<td><%=rs.getString(4)%></td>
+					<td><%=rs.getString(6)%></td>
+					<td><%=rs.getString(7)%></td>
+					<td style='text-align: center;'>
 						<%
 						if (rs.getInt(5) > 0) {
 						%> <a
@@ -102,14 +101,14 @@
 				<%
 				while (rs.next()) {
 				%>
-				<tr style="width: 10px">
-					<td style='width: 3%; text-align: center;'><%=rs.getString(1)%></td>
-					<td style='width: 12%'><%=rs.getString(2)%></td>
-					<td style='width: 12%'><%=rs.getString(3)%></td>
-					<td style='width: 12%'><%=rs.getString(4)%></td>
-					<td style='width: 6%'><%=rs.getString(6)%></td>
-					<td style='width: 6%'><%=rs.getString(7)%></td>
-					<td style='width: 6%'>
+				<tr>
+					<td style='text-align: center;'><%=rs.getString(1)%></td>
+					<td><%=rs.getString(2)%></td>
+					<td><%=rs.getString(3)%></td>
+					<td><%=rs.getString(4)%></td>
+					<td><%=rs.getString(6)%></td>
+					<td><%=rs.getString(7)%></td>
+					<td style='text-align: center;'>
 						<%
 						if (rs.getInt(5) > 0) {
 						%> <a
@@ -157,14 +156,14 @@
 				<%
 				while (rs.next()) {
 				%>
-				<tr style="width: 10px">
-					<td style='width: 3%; text-align: center;'><%=rs.getString(1)%></td>
-					<td style='width: 12%'><%=rs.getString(2)%></td>
-					<td style='width: 12%'><%=rs.getString(3)%></td>
-					<td style='width: 12%'><%=rs.getString(4)%></td>
-					<td style='width: 6%'><%=rs.getString(6)%></td>
-					<td style='width: 6%'><%=rs.getString(7)%></td>
-					<td style='width: 6%'>
+				<tr>
+					<td style='text-align: center;'><%=rs.getString(1)%></td>
+					<td><%=rs.getString(2)%></td>
+					<td><%=rs.getString(3)%></td>
+					<td><%=rs.getString(4)%></td>
+					<td><%=rs.getString(6)%></td>
+					<td><%=rs.getString(7)%></td>
+					<td style='text-align: center;'>
 						<%
 						if (rs.getInt(5) > 0) {
 						%> <a
@@ -189,6 +188,6 @@
 		}
 		}
 		%>
-	</div>
+	
 </body>
 </html>

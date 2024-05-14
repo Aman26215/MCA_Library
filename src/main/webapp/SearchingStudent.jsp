@@ -26,8 +26,8 @@ if(bt.equalsIgnoreCase("Search Id")) {
         ResultSet rs = pstm.executeQuery();
                 
 %>		<div class="scroll">
-            <table border=1>
-                <tr>
+            <table>
+                <tr style="color: indigo;">
                     <th>StudentId</th>
                     <th>Name</th>
                     <th>Contact</th>
@@ -39,10 +39,10 @@ if(bt.equalsIgnoreCase("Search Id")) {
                 <%
 				while (rs.next()) {
 				%>
-                <tr>
-                    <td><%=rs.getString(1)%></td>
+                <tr >
+                    <td style='text-align: center;'><%=rs.getString(1)%></td>
                     <td><%=rs.getString(2)%></td>
-                    <td><%=rs.getString(3)%></td>
+                    <td style='text-align: center;'><%=rs.getString(3)%></td>
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(5)%></td>
                     <td><%=rs.getString(6)%></td>
@@ -54,6 +54,7 @@ if(bt.equalsIgnoreCase("Search Id")) {
 				
 			</table>
 			</div>
+		
 			<%
     } catch(Exception e) {
         System.out.println(e);
@@ -61,7 +62,7 @@ if(bt.equalsIgnoreCase("Search Id")) {
 }
     
 
-if(bt.equalsIgnoreCase("Search Name")) {
+if(bt.equalsIgnoreCase("Search")) {
     String StudentName = request.getParameter("t2");
     String sname =  "%"+StudentName+"%";
     
@@ -74,8 +75,8 @@ if(bt.equalsIgnoreCase("Search Name")) {
         ResultSet rs = pstm.executeQuery();
         
 %>		<div class="scroll">
-            <table border=1>
-                <tr>
+            <table>
+                <tr style="color: indigo;">
                     <th>StudentId</th>
                     <th>Name</th>
                     <th>Contact</th>
@@ -87,10 +88,10 @@ if(bt.equalsIgnoreCase("Search Name")) {
                 <%
 				while (rs.next()) {
 				%>
-                <tr>
-                    <td><%=rs.getString(1)%></td>
+                <tr >
+                    <td style='text-align: center;'><%=rs.getString(1)%></td>
                     <td><%=rs.getString(2)%></td>
-                    <td><%=rs.getString(3)%></td>
+                    <td style='text-align: center;'><%=rs.getString(3)%></td>
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(5)%></td>
                     <td><%=rs.getString(6)%></td>
@@ -129,8 +130,8 @@ if(bt.equalsIgnoreCase("Search All")) {
         ResultSet rs = pstm.executeQuery();
         
 %>		<div class="scroll">
-            <table border=1>
-                <tr>
+            <table>
+                <tr style="color: indigo;">
                     <th>StudentId</th>
                     <th>Name</th>
                     <th>Contact</th>
@@ -142,10 +143,10 @@ if(bt.equalsIgnoreCase("Search All")) {
                 <%
 				while (rs.next()) {
 				%>
-                <tr>
-                    <td><%=rs.getString(1)%></td>
+                <tr >
+                    <td style='text-align: center;'><%=rs.getString(1)%></td>
                     <td><%=rs.getString(2)%></td>
-                    <td><%=rs.getString(3)%></td>
+                    <td style='text-align: center;'><%=rs.getString(3)%></td>
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getString(5)%></td>
                     <td><%=rs.getString(6)%></td>

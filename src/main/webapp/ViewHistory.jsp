@@ -5,39 +5,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Accession</title>
-
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
+
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
-		<ul>
+		
+		<ul id="AdminDetails">
 
-			<li class="item"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
-		
 		<div id="logout">
         <a href="logout"><button>Logout</button></a>
         </div>
-		
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
 		</div>
 		
 	</nav>
 	
-	
-<container>
-<div class="container1">
+	<div id="partion">
+	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -69,10 +66,11 @@
 			int flag=0;
 			
 	%>
-	<div class="scroll">
-		<table border=1>
-			<thead>
-				<tr>
+	<div class="container2">
+	<h1 style="text-align: center; margin: 10px;">Accession History</h1>
+	<div class="scroll2">
+			<table>
+				<tr style="color: indigo;">
 					<th>Borrow No.</th>
 					<th>Book Id</th>
 					<th>Book Name</th>
@@ -83,24 +81,24 @@
 					<th>Return Date</th>
 					<th>View Details</th>
 				</tr>
-			</thead>
+			
 			<%
 			while (rs.next()) {
 				flag=1;
 			%>
-			<tbody>
+			
 				<tr>
-					<td><%=rs.getString(1)%></td>
-					<td><%=rs.getString(2)%></td>
-					<td><%=rs.getString(3)%></td>
-					<td><%=rs.getString(4)%></td>
-					<td><%=rs.getString(5)%></td>
-					<td><%=rs.getString(6)%></td>
-					<td><%=rs.getString(7)%></td>
-					<td><%=rs.getString(8)%></td>
-					<td><a href="HistoryDetails.jsp?BorrowId=<%=rs.getString(1)%>"><img src="images/eye.png" class="src4"></a></td>
+					<td style='width: 3%; text-align: center;'><%=rs.getString(1)%></td>
+					<td style='width: 3%; text-align: center;'><%=rs.getString(2)%></td>
+					<td style='width: 12%'><%=rs.getString(3)%></td>
+					<td style='width: 3%; text-align: center;'><%=rs.getString(4)%></td>
+					<td style='width: 15%'><%=rs.getString(5)%></td>
+					<td style='width: 10%'><%=rs.getString(6)%></td>
+					<td style='width: 8%'><%=rs.getString(7)%></td>
+					<td style='width: 8%'><%=rs.getString(8)%></td>
+					<td style='width: 3%; text-align: center;'><a href="HistoryDetails.jsp?BorrowId=<%=rs.getString(1)%>"><img src="images/eye.png" class="src4"></a></td>
 				</tr>
-			</tbody>
+			
 			<%
 			}
 			con.close();
@@ -112,7 +110,7 @@
 				 <p style="color:Red;position: relative; text-align:center; font-weight:Bold">No Borrowed Book Available</p>
 				 
 	                <%
-			}%></div></container><%
+			}%></div></div></div><%
 	
 	
 	}catch (Exception e) {
