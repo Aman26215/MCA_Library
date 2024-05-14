@@ -138,7 +138,7 @@ a:hover{
  }
  
 #navbar2 a:hover{
-     color: white;
+     color: rgb(0, 0, 255);
      text-decoration: none;
  }
  
@@ -249,7 +249,14 @@ a:hover{
     margin: 0px 0px;
     margin-top: -6px;
 }
-
+.formbox2 input[type="number"],
+.formbox2 input[type="text"],
+.formbox2 input[type="email"]{
+	padding: 3px;
+    font-size: large;
+    border-bottom-width: medium;
+    width: 280px;
+}
 
 
 
@@ -261,7 +268,7 @@ a:hover{
 
 div.scroll {
     margin-left: 21%;
-    margin-top: 19%;
+    margin-top: 20%;
     position: absolute;
     height: -webkit-fill-available;
     width: -webkit-fill-available;

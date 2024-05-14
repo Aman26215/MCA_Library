@@ -60,13 +60,13 @@ public class Login extends HttpServlet {
 
 	                } else {
 	                    response.setContentType("text/html");
-	                    out.print("<h3 style='color: #bf0303cf;margin-top: 370px;position: fixed;text-align: center;'>Incorrect Password</h3>");
+	                    out.print("<h3 style='color: #bf0303cf;margin-top: 400px;position: fixed;text-align: center;'>Incorrect Password</h3>");
 	                    RequestDispatcher rd = request.getRequestDispatcher("/AdminLogin.html");
 	                    rd.include(request, response);
 	                }
 	            } else {
 	                response.setContentType("text/html");
-	                out.print("<h3 style='color: #bf0303cf;margin-top: 370px;position: fixed;text-align: center;'>Admin ID Not Found.</h3>");
+	                out.print("<h3 style='color: #bf0303cf;margin-top: 400px;position: fixed;text-align: center;'>Admin ID Not Found.</h3>");
 	                RequestDispatcher rd = request.getRequestDispatcher("/AdminLogin.html");
 	                rd.include(request, response);
 	            }
@@ -76,4 +76,4 @@ public class Login extends HttpServlet {
 	            System.out.println(e);
 	        }
 	    }
-} 
+}

@@ -12,28 +12,27 @@ StudentSession VARCHAR(255) NOT NULL,
 Gender VARCHAR(255) NOT NULL,
 capacity INT DEFAULT(1));
 
-ALTER TABLE Student
-ADD COLUMN capacity INT DEFAULT(1);
 
 INSERT INTO Student (StudentId, StudentName, StudentContact, StudentEmail, StudentSession, Gender)
 VALUES
 (101, "Rahul Sharma", "8821842341", "rahulkumar219209200@gmail.com", "2022-24", "Male"),
-(102, "Aman Ranjan", "88218424561", "rahulkumar219209200@gmail.com", "2022-24", "Male"),
-(103, "Aaryan kumar", "88215656341", "rahulkumar219209200@gmail.com", "2022-24", "Male");
+(102, "Aman Ranjan", "8821842456", "rahulkumar219209200@gmail.com", "2022-24", "Male"),
+(103, "Aaryan kumar", "8821565341", "rahulkumar219209200@gmail.com", "2022-24", "Male");
 
 -- Admin Table 
 
 CREATE TABLE Admin
 (AdminId BIGINT PRIMARY KEY,
 AdminName VARCHAR(255) NOT NULL,
+AdminEmail VARCHAR(255) NOT NULL,
 AdminContact VARCHAR(255) NOT NULL,
 Password VARCHAR(255) NOT NULL);
 
-INSERT INTO Admin (AdminId, AdminName, AdminContact, Password)
+INSERT INTO Admin (AdminId, AdminName, AdminContact, Password, AdminEmail)
 VALUES
-(1, "Himanshu Ojha", "9995285475", "Admin@1"),
-(2, "Manoj Kumar Yadav", "8821842451", "Admin@2"),
-(3, "Prabhat Kumar", "8821566341", "Admin@3");
+(1, "Himanshu Ojha", "9995285475", "Admin@1", "Admin1@gmail.com"),
+(2, "Manoj Kumar Yadav", "8821842451", "Admin@2", "Admin2@gmail.com"),
+(3, "Prabhat Kumar", "8821566341", "Admin@3", "Admin3@gmail.com");
 
 -- BorrowRegister 
 
@@ -51,10 +50,41 @@ FOREIGN KEY (StudentId) references Student(StudentId)
 -- Queries 
 
 SELECT * FROM Student WHERE StudentId = 101;
-SELECT * FROM Student WHERE StudentId = "101";
+SELECT * FROM Book WHERE BookId = "555";
 SELECT * FROM Book WHERE BookName LIKE '%algo%';
 SELECT * FROM Student WHERE StudentName LIKE '%ra%';
 SELECT * FROM Admin;
+SELECT * FROM BorrowRegister;
+Update Student SET Capacity=1 where StudentId=103;
+Update Book SET Quantity=1 where BookId=555;
+
+SELECT count(BorrowId) From BorrowRegister WHERE ReturnDate IS NOT NULL;
+
+
+
+
+
+
+-- Return Book Queries testing 
+
+select  IssueDate, BorrowRegister.BookId, BookName, Author, Publication, Quantity, ISBN_No, BorrowRegister.StudentId, StudentName, StudentContact, StudentEmail, StudentSession, Gender, Capacity
+from BorrowRegister 
+inner join Book 
+on BorrowRegister.BookId=Book.BookId
+inner join Student 
+on BorrowRegister.StudentId=Student.StudentId
+where (BorrowId=9)
+ORDER BY BorrowId desc;
+
+
+select BorrowId, BorrowRegister.BookId, BookName, BorrowRegister.StudentId, StudentName, StudentContact, IssueDate, Quantity from BorrowRegister inner join Book on BorrowRegister.BookId=Book.BookId inner join Student on BorrowRegister.StudentId=Student.StudentId where (Quantity = 0 AND BorrowRegister.BookId=42);
+
+select BorrowId, BorrowRegister.BookId, BookName, BorrowRegister.StudentId, StudentName, StudentContact, IssueDate, ReturnDate from BorrowRegister inner join Book on BorrowRegister.BookId=Book.BookId inner join Student on BorrowRegister.StudentId=Student.StudentId;
+
+
+
+
+
 
 -- Book Table 
 
@@ -63,7 +93,7 @@ create table Book
 BookName varchar(255) not null,
 Author varchar(255) not null,
 Publication varchar(255) ,
-Quantity int default'1',
+Quantity int default(1),
 ISBN_No varchar(255),
 OrderReceivedDate date not null
 );
