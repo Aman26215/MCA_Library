@@ -138,7 +138,7 @@ a:hover{
  }
  
 #navbar2 a:hover{
-     color: rgb(0, 0, 255);
+     color: green;
      text-decoration: none;
  }
  
@@ -293,6 +293,20 @@ table, th, td {
   font-size: larger;
 }
 
+.scroll tr td a:link {
+	color: blue;
+	text-decoration: none;
+}
+.scroll tr td a:visited {
+	color: blue;
+	text-decoration: none;
+}
+.scroll tr td a:hover {
+	color: green;
+    text-decoration: none;
+}
+
+
 
 div.scroll2 {
     margin: auto;
@@ -319,6 +333,103 @@ div.scroll2 {
   padding: 6px;
   font-size: larger;
 }
+
+
+
+
+
+
+
+/* Confirmation Page CSS */
+
+.conf-div {
+	align-items: center;
+	display : flex;
+	flex-direction : column;
+}
+
+.row1{
+	display : flex;
+	padding-bottom : 10px;
+}
+
+.row2{
+	display : flex;
+}
+
+.details {
+	background-color: cornsilk;
+    border: 1px dashed blue;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0px 15px;
+    width: 300px;
+}
+
+.details2 {
+	background-color : red;
+	border : 1px solid blue;
+	width : fit-content;
+	margin : 10px;
+	padding : 20px;
+}
+
+.confirm-option {
+	background-color: crimson;
+    border: 1px solid blue;
+    margin: 10px;
+    padding: 15px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+.button-group-confirm-option{
+	text-align-last: center;
+}
+
+
+
+
+
+.details h2 {
+	text-align : center;
+}
+
+.confirm-option h3 {
+	text-align : center;
+}
+
+.details p {
+	font-family : math;
+}
+
+.details p span {
+	font-style: italic;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -400,6 +511,12 @@ div.scroll2 {
         border-radius: 5px;
         margin-right: 10px;
 }
+.button-group input[type="submit"]:hover,
+.button-group input[type="reset"]:hover {
+        background-color: #0056b3;
+}
+
+
 .button-group-search{
 	text-align: center;
 }
@@ -416,11 +533,12 @@ div.scroll2 {
     font-size: large;
     text-align: center;
 }
-
-.button-group input[type="submit"]:hover,
-.button-group input[type="reset"]:hover {
-        background-color: #0056b3;
+.button-group-search input[type="submit"]:hover,
+.button-group-search input[type="reset"]:hover{
+	background-color: #fff;
+    color: black;
 }
+
 
 .button-group-search-single{
 	text-align: center;
@@ -433,4 +551,25 @@ div.scroll2 {
     border-radius: 5px;
     font-size: large;
     text-align: center;
+}
+.button-group-search-single:hover {
+	background-color: #fff;
+    color: black;
+}
+
+
+.button-group-confirm-option input[type="submit"]{
+	padding: 4px 10px;
+    margin-top: 10px;
+    border: 1px solid white;
+    background-color: #0080ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: large;
+    text-align: center;
+}
+.button-group-confirm-option input[type="submit"]:hover{
+	background-color: #4867e1;
+    color: black;
 }

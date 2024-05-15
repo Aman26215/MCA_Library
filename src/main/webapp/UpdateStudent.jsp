@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update Student Details</title><link rel="stylesheet" href="css/NewDashboard.css">
+<title>Update Student Details</title>
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
 <nav id="navbar">

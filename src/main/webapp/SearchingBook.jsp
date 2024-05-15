@@ -12,6 +12,8 @@
 		<jsp:include page="SearchBook.jsp" />
 
 		<%@ page import="java.sql.*"%>
+		<%@ page import="java.time.LocalDate"%>
+		<%@ page import="java.time.format.DateTimeFormatter"%>
 		<%
 		String bt = request.getParameter("b1");
 
@@ -27,6 +29,9 @@
 				pstm.setString(1, bid);
 
 				ResultSet rs = pstm.executeQuery();
+				
+				String dd = null;
+				DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		%>
 		<div class="scroll">
 			<table>
@@ -41,6 +46,11 @@
 				</tr>
 				<%
 				while (rs.next()) {
+					dd = rs.getString(7);
+					if(dd != null){
+						LocalDate ld = LocalDate.parse(dd);
+						dd = ld.format(outputFormat);
+						}
 				%>
 				<tr>
 					<td style='width: 3%; text-align: center;'><%=rs.getString(1)%></td>
@@ -48,15 +58,14 @@
 					<td><%=rs.getString(3)%></td>
 					<td><%=rs.getString(4)%></td>
 					<td><%=rs.getString(6)%></td>
-					<td><%=rs.getString(7)%></td>
+					<td><%=dd%></td>
 					<td style='text-align: center;'>
 						<%
 						if (rs.getInt(5) > 0) {
 						%> <a
 						href="IssueBook.jsp?BookId=<%=rs.getInt(1)%>">Issue</a> <%
  } else {
- %>Book
-						Already Issued<%
+ %><p style="color:red">Book Already Issued</p><%
  }
  %>
 					</td>
@@ -86,6 +95,9 @@
 		PreparedStatement pstm = con.prepareStatement("SELECT * FROM Book WHERE BookName LIKE ?;");
 		pstm.setString(1, bname);
 		ResultSet rs = pstm.executeQuery();
+		
+		String dd = null;
+		DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		%>
 		<div class="scroll">
 			<table>
@@ -100,6 +112,11 @@
 				</tr>
 				<%
 				while (rs.next()) {
+					dd = rs.getString(7);
+					if(dd != null){
+						LocalDate ld = LocalDate.parse(dd);
+						dd = ld.format(outputFormat);
+						}
 				%>
 				<tr>
 					<td style='text-align: center;'><%=rs.getString(1)%></td>
@@ -107,7 +124,7 @@
 					<td><%=rs.getString(3)%></td>
 					<td><%=rs.getString(4)%></td>
 					<td><%=rs.getString(6)%></td>
-					<td><%=rs.getString(7)%></td>
+					<td><%=dd%></td>
 					<td style='text-align: center;'>
 						<%
 						if (rs.getInt(5) > 0) {
@@ -141,6 +158,10 @@
 
 		PreparedStatement pstm = con.prepareStatement("SELECT * FROM Book");
 		ResultSet rs = pstm.executeQuery();
+		
+		String dd = null;
+		DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		
 		%>
 		<div class="scroll">
 			<table>
@@ -155,14 +176,20 @@
 				</tr>
 				<%
 				while (rs.next()) {
+					dd = rs.getString(7);
+					if(dd != null){
+						LocalDate ld = LocalDate.parse(dd);
+						dd = ld.format(outputFormat);
+						}
 				%>
+				
 				<tr>
 					<td style='text-align: center;'><%=rs.getString(1)%></td>
 					<td><%=rs.getString(2)%></td>
 					<td><%=rs.getString(3)%></td>
 					<td><%=rs.getString(4)%></td>
 					<td><%=rs.getString(6)%></td>
-					<td><%=rs.getString(7)%></td>
+					<td><%=dd%></td>
 					<td style='text-align: center;'>
 						<%
 						if (rs.getInt(5) > 0) {

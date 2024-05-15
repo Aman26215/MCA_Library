@@ -5,39 +5,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Issue Book</title>
-
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
+
 <nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
-		<ul>
+		
+		<ul id="AdminDetails">
 
-			<li class="item"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
-		
 		<div id="logout">
         <a href="logout"><button>Logout</button></a>
         </div>
-		
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
 		</div>
 		
 	</nav>
 	
-	
-<container>
-<div class="container1">
+	<div id="partion">
+	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -54,23 +51,31 @@
         </ul>
     </nav>
     </div>
+
+<div class="container2">
+	<h1 style="text-align:center; margin:10px;">Issue Book to Student</h1>
+
+		<div class="formbox">
     
-    
-    <div class="container2" >
-    <div id="f">
 	<% String bid = request.getParameter("BookId"); %>
-	<h1>Issue Book to Student</h1>
+	
 	<form action="Confirmation.jsp" method="post">
-		<p>Book Id : </p><input name="t1" value="<%= bid %>" readonly >
-		<p>Student Id : </p><input type="number" name="t2" placeholder="Enter Student Roll No." required>
-		<input type="submit" name= "b1" value="Issue">
+		<pre>Book Id :    <input type="text" name="t1" value="<%= bid %>" readonly ></pre>
+		<pre>Student Id : <input type="number" name="t2" placeholder="Enter Student Roll No." required></pre>
+		
+		<div class="button-group-search">
+            <input type="submit" value="Issue Book" name="b1" >
+            </div>
 		
 	</form>
 	<form action="SearchBook.jsp" method="post">
-		<input type="submit" value="Go Back">
+		<div class="button-group-search">
+            <input type="submit" value="Back">
+            </div>
 	</form>
 	</div>
-	
+	</div>
+	</div>
 	
 </body>
 </html>

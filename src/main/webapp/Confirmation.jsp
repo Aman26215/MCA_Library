@@ -5,39 +5,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Confirmation Page</title>
-<link rel="stylesheet" href="css/HomePageStyle.css">
-<link rel="stylesheet" href="css/Dashboard.css">
+<link rel="stylesheet" href="css/NewDashboard.css">
 </head>
 <body>
-
-	<nav id="navbar">
+<nav id="navbar">
 		<div id="logo">
-			<img src="images/Logo1.jpg" alt="StackLab.com" class="src">
+			<img src="images/Logo2.jpg" alt="StackLab.com" class="src">
 		</div>
-		<ul>
+		
+		<ul id="AdminDetails">
 
-			<li class="item"><p>
+			<li ><p>
 		Welcome
 		<%=session.getAttribute("AdminName")%></p></li>
-			<li class="item"><p>
+			<li style="padding-left:25px"><p>
 		Your Admin Id is :
 		<%=session.getAttribute("AdminId")%></p></li>
 			
 		</ul>
-		
 		<div id="logout">
         <a href="logout"><button>Logout</button></a>
         </div>
-		
 		<div id="logo">
 			<img src="images/Logo4.png" class="src">
 		</div>
 		
 	</nav>
 	
-	
-<container>
-<div class="container1">
+	<div id="partion">
+	<div class="container1">
 		<nav id="navbar2">
         <header><img src="images/Logo5.png" class="src2" >Menu</header>
         <ul class="navul">
@@ -54,11 +50,13 @@
         </ul>
     </nav>
     </div>
-    
-    
-	<div class="container2" >
+
+<div class="container2">
+	<div class = "conf-div">
 
 		<%@ page import="java.sql.*"%>
+		<%@ page import="java.time.LocalDate"%>
+		<%@ page import="java.time.format.DateTimeFormatter"%>
 		<%
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -80,28 +78,28 @@
 
 				if (btn.equalsIgnoreCase("Add Student")) {
 		%>
-		<div class="c">
-			<h1>Student Details</h1>
-			<p>
-				Roll No. :
+		<div class="row1">
+		<div class="details">
+			<h2>Student Details</h2>
+			<p><span>Registration No. :</span>
 				<%=st1%></p>
-			<p>
-				Name :
+			<p><span>Name :</span>
 				<%=st2%></p>
-			<p>
-				Contact :
+			<p><span>Contact :</span>
 				<%=st3%></p>
-			<p>
-				Email :
+			<p><span>Email :</span>
 				<%=st4%></p>
-			<p>
-				Session :
+			<p><span>Session :</span>
 				<%=st5%></p>
-			<p>
-				Gender :
+			<p><span>Gender :</span>
 				<%=st6%></p>
-			<p>Do you Sure Want to Add Student?</p>
-			<div class="button-group-c">
+		</div>
+		</div>
+		
+		<div class="row2">
+		<div class="confirm-option">
+			<h3>Do you Sure Want to Add Student?</h3>
+		<div class="button-group-confirm-option">
 				<form
 					action="ActionOnStudent.jsp?&b1=AddStudent&RollNo=<%=st1%>&Name=<%=st2%>&Contact=<%=st3%>&Email=<%=st4%>&StudentSession=<%=st5%>&Gender=<%=st6%>"
 					method="post">
@@ -111,6 +109,7 @@
 					<input type="Submit" value="No" name="b1">
 				</form>
 			</div>
+		</div>
 		</div>
 		<%
 		}
@@ -129,28 +128,28 @@
 
 			if (val == sid) {
 		%>
-		<div class="c">
-			<h1>New Details of Student</h1>
-			<p>
-				Roll No. :
+		<div class="row1">
+		<div class="details">
+			<h2>New Details of Student</h2>
+			<p><span>Registration No. :</span>
 				<%=st1%></p>
-			<p>
-				Name :
+			<p><span>Name :</span>
 				<%=st2%></p>
-			<p>
-				Contact :
+			<p><span>Contact :</span>
 				<%=st3%></p>
-			<p>
-				Email :
+			<p><span>Email :</span>
 				<%=st4%></p>
-			<p>
-				Session :
+			<p><span>Session :</span>
 				<%=st5%></p>
-			<p>
-				Gender :
+			<p><span>Gender :</span>
 				<%=st6%></p>
-			<p>Do you Sure Want to Update Student Details?</p>
-			<div class="button-group-c">
+		</div>
+		</div>
+			
+		<div class="row2">
+		<div class="confirm-option">
+			<h3>Do you Sure Want to Update Student Details?</h3>
+		<div class="button-group-confirm-option">
 				<form
 					action="ActionOnStudent.jsp?&b1=UpdateStudent&RollNo=<%=st1%>&Name=<%=st2%>&Contact=<%=st3%>&Email=<%=st4%>&StudentSession=<%=st5%>&Gender=<%=st6%>"
 					method="post">
@@ -160,6 +159,7 @@
 					<input type="Submit" value="No" name="b1">
 				</form>
 			</div>
+		</div>
 		</div>
 		<%
 		flag = 1;
@@ -199,28 +199,28 @@
 		}
 		if (flag == 1) {
 		%>
-		<div class="c">
-			<h1>Details of Student</h1>
-			<p>
-				Roll No. :
+		<div class="row1">
+		<div class="details">
+			<h2>Details of Student</h2>
+			<p><span>Registration No. :</span>
 				<%=st1%></p>
-			<p>
-				Name :
+			<p><span>Name :</span>
 				<%=st2%></p>
-			<p>
-				Contact :
+			<p><span>Contact :</span>
 				<%=st3%></p>
-			<p>
-				Email :
+			<p><span>Email :</span>
 				<%=st4%></p>
-			<p>
-				Session :
+			<p><span>Session :</span>
 				<%=st5%></p>
-			<p>
-				Gender :
+			<p><span>Gender :</span>
 				<%=st6%></p>
-			<p>Do you Sure Want to Delete this Student?</p>
-			<div class="button-group-c">
+		</div>
+		</div>
+				
+		<div class="row2">
+		<div class="confirm-option">
+			<h3>Surly Want to Delete this Student?</h3>
+		<div class="button-group-confirm-option">
 				<form action="ActionOnStudent.jsp?&b1=DeleteStudent&RollNo=<%=st1%>"
 					method="post">
 					<input type="Submit" value="Yes, I Confirm!">
@@ -229,6 +229,7 @@
 					<input type="Submit" value="No" name="b1">
 				</form>
 			</div>
+		</div>
 		</div>
 		<%
 		} else {
@@ -256,30 +257,28 @@
 	        String bt5 = request.getParameter("ISBN");
 	        String bt6 = request.getParameter("Date");
 		%>
-		<div class="c">
-			<h1>Book Detail</h1>
-			<p>
-				Book Id :
+		<div class="row1">
+		<div class="details">
+			<h2>Book Detail</h2>
+			<p><span>Book Id :</span>
 				<%=bt1%></p>
-			<p>
-				Book Name :
+			<p><span>Book Name :</span>
 				<%=bt2%></p>
-			<p>
-				Author :
+			<p><span>Author :</span>
 				<%=bt3%></p>
-			<p>
-				Publication :
+			<p><span>Publication :</span>
 				<%=bt4%></p>
-		    <p>
-				ISBN Number :
+		    <p><span>ISBN Number :</span>
 				<%=bt5%></p>
-			<p>
-				Date of Receiving :
+			<p><span>Date of Receiving :</span>
 				<%=bt6%></p>
+			</div>
+		</div>
 				
-				
-			<p>Do you Sure Want to Add this Book?</p>
-			<div class="button-group-c">
+		<div class="row2">
+		<div class="confirm-option">
+			<h3>Do you Sure Want to Add this Book?</h3>
+		<div class="button-group-confirm-option">
 				<form
 					action="ActionOnBook.jsp?&b1=AddBook&BookId=<%=bt1%>&BookName=<%=bt2%>&Author=<%=bt3%>&Publication=<%=bt4%>&ISBN=<%=bt5%>&Date=<%=bt6%>"
 					method="post">
@@ -290,6 +289,7 @@
 				</form>
 			</div>
 		</div>
+		</div>
 		<%
 		}
 		
@@ -298,7 +298,7 @@
 
 		//Issue Book
 		
-		if (btn.equalsIgnoreCase("Issue")) {
+		if (btn.equalsIgnoreCase("Issue Book")) {
 		String bid = request.getParameter("t1");
 		int bid1 = Integer.parseInt(bid);
 		String sid = request.getParameter("t2");
@@ -346,50 +346,41 @@
 			bisbn = rs1.getString(6);
 		}
 		%>
-		<div id="issueConfirmation">
-		<div class="confirmation"  >
-			<h1>Book Detail</h1>
-			<p>
-				Book Id :
+		<div class="row1">
+		<div class="details"  >
+			<h2>Book Detail</h2>
+			<p><span>Book Id :</span>
 				<%=bid%></p>
-			<p>
-				Book Name :
+			<p><span>Book Name :</span>
 				<%=bname%></p>
-			<p>
-				Author :
+			<p><span>Author :</span>
 				<%=bauthor%></p>
-			<p>
-				Publication :
+			<p><span>Publication :</span>
 				<%=bpublication%></p>
-			<p>
-				ISBN No. :
+			<p><span>ISBN No. :</span>
 				<%=bisbn%></p>
 		</div>
-		<div class="confirmation">
+		<div class="details">
 			<h1>Student Detail</h1>
-			<p>
-				Student Id :
+			<p><span>Student Id :</span>
 				<%=sid%></p>
-			<p>
-				Student Name :
+			<p><span>Student Name :</span>
 				<%=sname%></p>
-			<p>
-				Contact :
+			<p><span>Contact :</span>
 				<%=scontact%></p>
-			<p>
-				Email :
+			<p><span>Email :</span>
 				<%=semail%></p>
-			<p>
-				Session :
+			<p><span>Session :</span>
 				<%=ssession%></p>
-			<p>
-				Gender :
+			<p><span>Gender :</span>
 				<%=sgender%></p>
 		</div>
 		</div>
-		<div class="c">
-		<p>Do you Sure Want to Issue this Book to above Student?</p>
-		<div class="button-group-c">
+		
+		<div class="row2">
+		<div class="confirm-option">
+		<h3>Do you confirm above details?</h3>
+		<div class="button-group-confirm-option">
 			<form
 				action="FinalAction.jsp?&b1=Issue&BookId=<%=bid%>&StudentId=<%=sid%>"
 				method="post">
@@ -398,6 +389,7 @@
 			<form action="IssueBook.jsp?BookId=<%=bid%>" method="post">
 				<input type="submit" value="No">
 			</form>
+		</div>
 		</div>
 		</div>
 		<%
@@ -413,6 +405,7 @@
 
 				String bid= null, sid=null, sname = null, scontact = null, semail = null, ssession = null, sgender = null, bname = null, bauthor = null,
 						bpublication = null, bisbn = null, bIssueDate= null;
+				String formatedbIssueDate=null;
 				int cap = -1;
 				int qun = -1;
 
@@ -434,6 +427,10 @@
 				ssession = rs.getString(12);
 				sgender = rs.getString(13);
 				cap = rs.getInt(14);
+				
+				LocalDate ld = LocalDate.parse(bIssueDate);
+				DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+				formatedbIssueDate = ld.format(outputFormat);
 				
 				flag = 1;
 				}
@@ -457,61 +454,48 @@
 				if (flag == 1) {
 				
 				%>
-				<div id="issueConfirmation">
-				<div class="confirmation"  >
-					<h1>Book Detail</h1>
-					<p>
-						Book Id :
+				<div class="row1">
+				<div class="details">
+					<h2>Book Detail</h2>
+					<p><span>Book Id :</span>
 						<%=bid%></p>
-					<p>
-						Book Name :
+					<p><span>Book Name :</span>
 						<%=bname%></p>
-					<p>
-						Author :
+					<p><span>Author :</span>
 						<%=bauthor%></p>
-					<p>
-						Publication :
+					<p><span>Publication :</span>
 						<%=bpublication%></p>
-					<p>
-						ISBN No. :
+					<p><span>ISBN No. :</span>
 						<%=bisbn%></p>
 				</div>
-				<div class="confirmation">
-					<h1>Student Detail</h1>
-					<p>
-						Student Id :
+				<div class="details">
+					<h2>Student Detail</h2>
+					<p><span>Student Id :</span>
 						<%=sid%></p>
-					<p>
-						Student Name :
+					<p><span>Student Name :</span>
 						<%=sname%></p>
-					<p>
-						Contact :
+					<p><span>Contact : </span>
 						<%=scontact%></p>
-					<p>
-						Email :
+					<p><span>Email : </span>
 						<%=semail%></p>
-					<p>
-						Session :
+					<p><span>Session : </span>
 						<%=ssession%></p>
-					<p>
-						Gender :
+					<p><span>Gender : </span>
 						<%=sgender%></p>
 				</div>
-				<div class="confirmation">
-					<h1>Borrow Details</h1>
-					<p>
-						Borrow No. :
+				</div>
+				
+				<div class="row2">
+				<div class="details">
+					<h2>Borrow Details</h2>
+					<p><span>Borrow No. : </span>
 						<%=BorrowId%></p>
-					<p>
-						Issue Date :
-						<%=bIssueDate%></p>
+					<p><span>Issue Date : </span>
+						<%=formatedbIssueDate%></p>
 				</div>
-				</div>
-				
-				
-				<div class="c">
-				<p>Do you Confirm this Return?</p>
-				<div class="button-group-c">
+				<div class="confirm-option">
+				<h3>Do you Confirm this Return?</h3>
+				<div class="button-group-confirm-option">
 					<form
 						action="FinalAction.jsp?&b1=Return&BorrowId=<%=BorrowId%>"
 						method="post">
@@ -520,6 +504,7 @@
 					<form action="Returning.jsp?b1=Search All" method="post">
 						<input type="submit" value="No">
 					</form>
+				</div>
 				</div>
 				</div>
 				<%
@@ -531,8 +516,8 @@
 		}
 		%>
 	</div>
-
-	</container>
+	</div>
+	</div>
 
 </body>
 </html>

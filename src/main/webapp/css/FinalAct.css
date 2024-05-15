@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body {
+	background-color : white;
+}
+
+.Main-Div {
+	width: 100%;
+	height: 100%;
+}
+
+.Final-Action-Div{
+	display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+}
+
+.Final-Action-Div Video {
+	height : 240;
+	width : 320;
+}
+
+.Final-Action-Div p {
+	text-align : center;
+	font-size: x-large;
+}
+
+.Final-Action-Div form button[type="submit"]{
+	padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.Final-Action-Div form button[type="submit"]:hover {
+	background-color: #0056b3;
+	color: black;
+}
+
+.FA-buttons {
+	display: flex;
+    margin: auto;
+    padding-bottom: 10px;
+}

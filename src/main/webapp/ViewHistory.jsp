@@ -53,6 +53,8 @@
     </div>
 
 	<%@ page import="java.sql.*"%>
+	<%@ page import="java.time.LocalDate"%>
+	<%@ page import="java.time.format.DateTimeFormatter"%>
 	<%
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -64,6 +66,10 @@
 
 			ResultSet rs = pstm.executeQuery();
 			int flag=0;
+			
+			String dd1 = null;
+			String dd2 = null;
+			DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 			
 	%>
 	<div class="container2">
@@ -85,6 +91,17 @@
 			<%
 			while (rs.next()) {
 				flag=1;
+				
+				dd1 = rs.getString(7);
+				dd2 = rs.getString(8);
+				if(dd1 != null){
+				LocalDate ld = LocalDate.parse(dd1);
+				dd1 = ld.format(outputFormat);
+				}
+				if(dd2 != null){
+					LocalDate ld = LocalDate.parse(dd2);
+					dd2 = ld.format(outputFormat);
+				}
 			%>
 			
 				<tr>
@@ -94,8 +111,8 @@
 					<td style='width: 3%; text-align: center;'><%=rs.getString(4)%></td>
 					<td style='width: 15%'><%=rs.getString(5)%></td>
 					<td style='width: 10%'><%=rs.getString(6)%></td>
-					<td style='width: 8%'><%=rs.getString(7)%></td>
-					<td style='width: 8%'><%=rs.getString(8)%></td>
+					<td style='width: 8%'><%=dd1%></td>
+					<td style='width: 8%'><%=dd2%></td>
 					<td style='width: 3%; text-align: center;'><a href="HistoryDetails.jsp?BorrowId=<%=rs.getString(1)%>"><img src="images/eye.png" class="src4"></a></td>
 				</tr>
 			
