@@ -270,6 +270,7 @@ div.scroll {
     margin-left: 21%;
     margin-top: 20%;
     position: absolute;
+    text-align: -webkit-center;
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     overflow-x: auto;

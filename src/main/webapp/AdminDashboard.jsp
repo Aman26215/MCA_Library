@@ -101,7 +101,7 @@
     </div>
     </a>
     
-    <a href="SearchingBook.jsp?b1=Search All">
+    <a href="SearchingStudent.jsp?b1=Search All">
     <div id="childcontainer">
     	<img src="images/cn2.jpg" alt="StackLab.com" class="src3">
     	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn2%></p>
@@ -109,15 +109,15 @@
     </div>
     </a>
     
-    <a href="SearchingBook.jsp?b1=Search All">
+    <a href="ViewHistory.jsp">
     <div id="childcontainer">
     	<img src="images/cn3.png" alt="StackLab.com" class="src3">
     	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn3%></p>
-        <h4 style="font-family: math;">Book Issued<h4>
+        <h4 style="font-family: math;">Total Book Issued<h4>
     </div>
     </a>
     
-    <a href="SearchingBook.jsp?b1=Search All">
+    <a href="ViewReturnedBook.jsp">
     <div id="childcontainer">
     	<img src="images/cn4.png" alt="StackLab.com" class="src3">
     	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn4%></p>
@@ -125,7 +125,7 @@
     </div>
     </a>
     
-    <a href="SearchingBook.jsp?b1=Search All">
+    <a href="Returning.jsp?b1=Search All">
     <div id="childcontainer">
     	<img src="images/cn5.jpg" alt="StackLab.com" class="src3">
     	<p style="margin-bottom: -18px;margin-top: 7px;font-family: math;"><%=cn5%></p>
@@ -147,6 +147,6 @@
     	}
     %>
     </div>
-	
+	</div>
 </body>
 </html>

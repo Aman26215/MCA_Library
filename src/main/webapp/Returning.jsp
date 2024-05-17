@@ -7,8 +7,10 @@
 <title>Return Book</title>
 </head>
 <body>
-	<jsp:include page="Return.jsp" />
 
+	<jsp:include page="Return.jsp" />
+	<div class="scroll">
+	
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.time.LocalDate"%>
 	<%@ page import="java.time.format.DateTimeFormatter"%>
@@ -32,7 +34,6 @@
 			String dd = null;
 			DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	%>
-	<div class="scroll">
 		<table>
 				<tr>
 					<th>Borrow No.</th>
@@ -71,7 +72,6 @@
 			%>
 
 		</table>
-	</div>
 	<%if(flag==0){
 				 out.println("<script>alert('Entered Book Id is Not Issued Yet.')</script>");
 	                %>
@@ -100,7 +100,6 @@
 			String dd = null;
 			DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	%>
-	<div class="scroll">
 		<table>
 				<tr>
 					<th>Borrow No.</th>
@@ -139,7 +138,7 @@
 			%>
 
 		</table>
-	</div>
+	
 	<%if(flag==0){
 				 out.println("<script>alert('Entered Student has no books now.')</script>");
 	                %>
@@ -164,7 +163,7 @@
 			String dd = null;
 			DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	%>
-	<div class="scroll">
+	
 		<table>
 				<tr>
 					<th>Borrow No.</th>
@@ -203,10 +202,10 @@
 			%>
 
 		</table>
-	</div>
+	
 	
 	<%if(flag==0){%>
-				 <p style="color:Red;position: relative; text-align:center; font-weight:Bold">No Borrowed Book Available</p>
+				 <p style="color:Red; position: relative; text-align-last: center; font-weight:Bold;">No Borrowed Book Available</p>
 				 
 	                <%
 			}
@@ -216,6 +215,6 @@
 		System.out.println(e);
 		}
 	%>
-
+	</div>
 </body>
 </html>
