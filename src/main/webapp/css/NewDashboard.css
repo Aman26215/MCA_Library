@@ -314,7 +314,7 @@ div.scroll2 {
     margin-left: 44px;
     padding-right: 5px;
     padding-top: 10px;
-    position: relative;
+    position: absolute;
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     overflow-x: overlay;
