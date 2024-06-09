@@ -10,13 +10,5 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="lib" path="C:/jakarta.servlet-api-6.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/mysql-connector-j-8.3.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/kernel-7.1.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/kernel-7.1.4-javadoc.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/layout-7.1.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/layout-7.1.4-javadoc.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/layout-7.1.4-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/io-7.1.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/io-7.1.4-javadoc.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/jars/io-7.1.4-sources.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
